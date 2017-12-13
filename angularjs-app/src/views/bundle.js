@@ -34195,11 +34195,38 @@ require('./angular');
 module.exports = angular;
 
 },{"./angular":1}],3:[function(require,module,exports){
+function DashboardController () {
+
+}
+
+module.exports = DashboardController;
+},{}],4:[function(require,module,exports){
+function DashboardService () {
+
+}
+
+module.exports = DashboardService;
+},{}],5:[function(require,module,exports){
+angular
+	.module('dashboard')
+	.factory('DashboardService', require('./DashboardService'))
+	.controller('DashboardController', require('./DashboardController'))
+;
+},{"./DashboardController":3,"./DashboardService":4}],6:[function(require,module,exports){
 require('angular');
 
-var app = angular.module('App',[]);
+require('./dashboard');
 
-app.controller("AppController", function($scope){ 
-	$scope.message = 'coucou';
-});
-},{"angular":2}]},{},[3]);
+var modules = [
+	'dashboard'
+];
+
+var app = angular.module('App', modules);
+app.run(require('./init'));
+},{"./dashboard":5,"./init":7,"angular":2}],7:[function(require,module,exports){
+function Init () {
+
+}
+
+module.exports = Init;
+},{}]},{},[6]);
