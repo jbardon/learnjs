@@ -1,0 +1,12 @@
+{
+  "name": "angularjs-app",
+  "devDependencies": {
+    "browserify": "14.5.0",
+    "gulp": "3.9.1",
+    "run-sequence": "2.2.0",
+    "vinyl-source-stream": "1.1.0"
+  },
+  "dependencies": {
+    "angular": "1.6.7"
+  }
+}
