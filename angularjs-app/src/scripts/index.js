@@ -10,3 +10,4 @@ var modules = [
 
 var app = angular.module('App', modules);
 //app.run(require('./init'));
+app.config(require('./routes'));
