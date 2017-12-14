@@ -1,9 +1,11 @@
 require('angular');
 
-require('./dashboard');
+require('./customer');
+require('./rest');
 
 var modules = [
-	'dashboard'
+	'customer',
+	'rest'
 ];
 
 var app = angular.module('App', modules);
