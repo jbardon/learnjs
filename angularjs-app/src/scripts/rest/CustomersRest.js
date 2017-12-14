@@ -38,6 +38,25 @@ function CustomersRest () {
 		];
 	};
 
+	svc.getCustomer = function (id) {
+		return {
+			"id": id,
+			"firstname": "Nollie",
+			"lastname": "Klicher",
+			"gender": "Female",
+
+			"address": {
+				"street": "264 Colorado Pass",
+				"zipcode": "152219",
+				"city": "Toutosa"
+			},
+			"contact": {
+				"email": "nklicher0@princeton.edu",
+				"phone": "4067261063"
+			}
+		}
+	};
+
 	return svc;
 }
 

@@ -2,7 +2,9 @@ function CustomersListService (CustomersRest) {
 	var svc = {};
 
 	svc.resolveCustomersListController = function () {
-		return CustomersRest.getCustomers();
+		return {
+			customers: CustomersRest.getCustomers()
+		};
 	};
 
 	return svc;

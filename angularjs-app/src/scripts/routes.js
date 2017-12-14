@@ -1,24 +1,38 @@
 function Routes($stateProvider, $urlRouterProvider) {
-	"use strict";
-
 	$stateProvider.state({
 		name: 'home',
 		url: '/',
-		controller: 'DashboardController',
-		controllerAs: 'ctrl',
-		templateUrl: 'dashboard/dashboard.tpl.html',
-		params: {
-			screenState: {},
-			origin: null
-		},
+		templateUrl: 'dashboard/dashboard.tpl.html'
+	});
+
+	$stateProvider.state({
+		name: 'customers-list',
+		url: '/customers',
+		controller: 'CustomersListController',
+		controllerAs: 'ctrl', // Alias pour le controller dans le template
+		templateUrl: 'customer/customers-list.tpl.html',
 		resolve: {
-			initData: ['$transition$', 'DashboardService', function ($transition$, DashboardService) {
-				return DashboardService.resolveDashboardController($transition$.params().screenState, $transition$.params().origin);
+			// Injecte le paramètre "initData" au controlleur spécifie
+			initData: ['CustomersListService', function (CustomersListService) {
+				return CustomersListService.resolveCustomersListController();
 			}]
 		}
 	});
 
-	$urlRouterProvider.otherwise('login');
+	$stateProvider.state({
+		name: 'customer-sheet',
+		url: '/customers/:id',
+		controller: 'CustomerSheetController',
+		controllerAs: 'ctrl',
+		templateUrl: 'customer/customer-sheet.tpl.html',
+		resolve: {
+			initData: ['$stateParams', 'CustomerSheetService', function ($stateParams, CustomerSheetService) {
+				return CustomerSheetService.resolveCustomerSheetController($stateParams.id);
+			}]
+		}
+	});
+
+	$urlRouterProvider.otherwise('home');
 }
 
 module.exports = Routes;
