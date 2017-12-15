@@ -1,60 +1,43 @@
-function CustomersRest () {
-	var svc = {};
+function CustomersRest ($resource, $q) {
 
-	svc.getCustomers = function () {
-		return [
-			{
-				"id": 1,
-				"firstname": "Nollie",
-				"lastname": "Klicher",
-				"gender": "Female",
-
-				"address": {
-					"street": "264 Colorado Pass",
-					"zipcode": "152219",
-					"city": "Toutosa"
-				},
-				"contact": {
-					"email": "nklicher0@princeton.edu",
-					"phone": "4067261063"
-				}
+	var resource = $resource(
+		'http://localhost:3000/customers/:id', {},
+		{
+			getAll: {
+				method: 'GET',
+				isArray: true
 			},
-			{
-				"id": 2,
-				"firstname": "Eustace",
-				"lastname": "Badrick",
-				"gender": "Male",
-
-				"address": {
-					"street": "588 Montana Avenue",
-					"zipcode": "28205",
-					"city": "Soukkouma"
-				},
-				"contact": {
-					"email": "ebadrick8@jimdo.com",
-					"phone": "6926802156"
+			getById: {
+				method: 'GET',
+				params: {
+					id: '@id'
 				}
-			}
-		];
-	};
-
-	svc.getCustomer = function (id) {
-		return {
-			"id": id,
-			"firstname": "Nollie",
-			"lastname": "Klicher",
-			"gender": "Female",
-
-			"address": {
-				"street": "264 Colorado Pass",
-				"zipcode": "152219",
-				"city": "Toutosa"
-			},
-			"contact": {
-				"email": "nklicher0@princeton.edu",
-				"phone": "4067261063"
 			}
 		}
+	);
+
+	var svc = {};
+
+	var success = function (data) {
+		return data;
+	};
+
+	var failed = function (data) {
+		if(data.status === 404){
+			return null;
+		}
+		return $q.reject(data);
+	};
+
+	svc.getAll = function () {
+		return resource.getAll()
+			.$promise.then(success, failed);
+	};
+
+	svc.getById = function (customerId) {
+		return resource.getById({
+			id: customerId
+		}).$promise.then(success, failed);
 	};
 
 	return svc;

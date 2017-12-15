@@ -1,10 +1,15 @@
-function CustomerSheetService (CustomersRest) {
+function CustomerSheetService ($q, CustomersRest) {
 	var svc = {};
 
 	svc.resolveCustomerSheetController = function (customerId) {
-		return {
-			customer: CustomersRest.getCustomer(customerId)
+		var promises = {
+			customer: CustomersRest.getById(customerId)
 		};
+		return $q.all(promises).then(function (data) {
+			return {
+				customer: data.customer
+			};
+		});
 	};
 
 	return svc;

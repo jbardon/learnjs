@@ -1,6 +1,7 @@
 // Librairies externes
 require('angular');
-require('@uirouter/angularjs');
+require('@uirouter/angularjs'); // Router pour SPA
+require('angular-resource'); // Appels REST
 
 require('./customer');
 require('./rest');
@@ -15,5 +16,4 @@ var modules = [
 ];
 
 var app = angular.module('App', libraries.concat(modules));
-//app.run(require('./init'));
 app.config(require('./routes'));

@@ -1,9 +1,23 @@
-function CustomersListService (CustomersRest) {
+function CustomersListService ($q, CustomersRest) {
+
 	var svc = {};
 
 	svc.resolveCustomersListController = function () {
+		var promises = {
+			customers: CustomersRest.getAll()
+		};
+		return $q.all(promises).then(function (data) {
+			return {
+				customers: data.customers
+			};
+		});
+	};
+
+	svc.createCustomer = function (customerId) {
 		return {
-			customers: CustomersRest.getCustomers()
+			id: customerId,
+			firstname: 'John',
+			lastname: 'Doe'
 		};
 	};
 

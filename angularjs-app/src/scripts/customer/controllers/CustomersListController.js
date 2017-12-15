@@ -6,11 +6,11 @@ function CustomersListController (
 	var svc = CustomersListService;
 
 	ctrl.createCustomer = function () {
-		console.log('createCustomer');
+		ctrl.customers.push(svc.createCustomer(99));
 	};
 
 	ctrl.clearCustomers = function () {
-		console.log('clearCustomers');
+		ctrl.customers = [];
 	};
 
 	ctrl.init = function () {
