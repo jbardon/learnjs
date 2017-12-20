@@ -20,7 +20,7 @@ const config = {
                 use: 'babel-loader'
             }
         ]
-    },    
+    },   
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors',
@@ -30,12 +30,13 @@ const config = {
             }
         }),
         new webpack.LoaderOptionsPlugin({
-            debug: true
+            debug: true          
         })
     ],
+    devtool: 'eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
-      port: 7070
+      port: 7070      
       //historyApiFallback: true
     },
     resolve: {

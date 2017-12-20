@@ -11,5 +11,9 @@ export const vm = new Vue({
   store,
   components: {
     'app': App
+  },
+  render: function(createElement) {
+      // Rien dans le template HTML à cause du DOM parser
+      return createElement(App);
   }
 });
