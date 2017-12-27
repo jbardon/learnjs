@@ -9,4 +9,8 @@ angular
 	// Controllers
 	.controller('CustomersListController', require('./controllers/CustomersListController'))
 	.controller('CustomerSheetController', require('./controllers/CustomerSheetController'))
+
+	// Directives
+	// Le premier caractère doit être en minuscule
+	.directive('customersListItems', require('./directives/CustomersListItems'))
 ;
