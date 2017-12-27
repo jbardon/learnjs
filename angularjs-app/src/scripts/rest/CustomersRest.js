@@ -12,6 +12,12 @@ function CustomersRest ($resource, $q) {
 				params: {
 					id: '@id'
 				}
+			},
+			save: {
+				method: 'PUT',
+				params: {
+					id: '@id'
+				}
 			}
 		}
 	);
@@ -38,6 +44,12 @@ function CustomersRest ($resource, $q) {
 		return resource.getById({
 			id: customerId
 		}).$promise.then(success, failed);
+	};
+
+	svc.save = function (customer) {
+		return resource.save({
+			id: customer.id
+		}, customer).$promise.then(success, failed);
 	};
 
 	return svc;

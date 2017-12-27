@@ -32,6 +32,19 @@ function Routes($stateProvider, $urlRouterProvider) {
 		}
 	});
 
+	$stateProvider.state({
+		name: 'customer-sheet-edit',
+		url: '/customers/:id/edit',
+		controller: 'CustomerSheetController',
+		controllerAs: 'ctrl',
+		templateUrl: 'customer/customer-sheet-edit.tpl.html',
+		resolve: {
+			initData: ['$stateParams', 'CustomerSheetService', function ($stateParams, CustomerSheetService) {
+				return CustomerSheetService.resolveCustomerSheetController($stateParams.id);
+			}]
+		}
+	});
+
 	$urlRouterProvider.otherwise('home');
 }
 

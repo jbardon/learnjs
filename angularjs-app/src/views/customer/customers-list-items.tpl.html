@@ -18,6 +18,9 @@
 			<td align="center">
 				<!-- Pour utiliser le router [nom de la route]([ params sous forme d'objet ])) -->
 				<a ui-sref="customer-sheet({id: customer.id})" class="btn btn-default">
+					<i class="fa fa-eye"></i>
+				</a>
+				<a ui-sref="customer-sheet-edit({id: customer.id})" class="btn btn-default">
 					<i class="fa fa-pencil"></i>
 				</a>
 				<a class="btn btn-default" ng-click="deleteCustomer(index)">

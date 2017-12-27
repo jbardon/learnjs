@@ -12,6 +12,10 @@ function CustomerSheetService ($q, CustomersRest) {
 		});
 	};
 
+	svc.save = function (customer) {
+		return CustomersRest.save(customer);
+	};
+
 	return svc;
 }
 

@@ -1,4 +1,4 @@
-var CustomersListItems = function() {
+var CustomersListItemsDirective = function() {
 	return {
 		restrict : 'E',
 		replace : true,
@@ -16,4 +16,4 @@ var CustomersListItems = function() {
 	};
 };
 
-module.exports = CustomersListItems;
+module.exports = CustomersListItemsDirective;
