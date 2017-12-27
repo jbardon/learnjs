@@ -70,15 +70,50 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../news/angularjs-app/angularjs-app.iml" filepath="$PROJECT_DIR$/../news/angularjs-app/angularjs-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../news/mock-api/mock-api.iml" filepath="$PROJECT_DIR$/../news/mock-api/mock-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../news/vue-app/vue-app.iml" filepath="$PROJECT_DIR$/../news/vue-app/vue-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/angularjs-app/angularjs-app.iml" filepath="$PROJECT_DIR$/angularjs-app/angularjs-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mock-api/mock-api.iml" filepath="$PROJECT_DIR$/mock-api/mock-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vue-app/vue-app.iml" filepath="$PROJECT_DIR$/vue-app/vue-app.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="false">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Dev AngularJsApp" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/angularjs-app/gulpfile.js</gulpfile>
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Run MockApi" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/mock-api/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Dev VueApp" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/vue-app/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Debug VueApp" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:7070">
+      <mapping url="webpack:///." local-file="$PROJECT_DIR$/vue-app/src" />
+      <mapping url="http://localhost:7070" local-file="$PROJECT_DIR$/vue-app" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Debug AngularJsApp" type="JavascriptDebugType" factoryName="JavaScript Debug" activateToolWindowBeforeRun="false" uri="http://localhost:2222">
+      <mapping url="http://localhost:2222" local-file="$PROJECT_DIR$/angularjs-app/src/scripts" />
+      <mapping url="http://localhost:2222" local-file="$PROJECT_DIR$/angularjs-app" />
+      <method />
+    </configuration>
+  </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$/../news" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>

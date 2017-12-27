@@ -8,7 +8,7 @@ require('./rest');
 
 var libraries = [
 	'ui.router'
-]
+];
 
 var modules = [
 	'customer',

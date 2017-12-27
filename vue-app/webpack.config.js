@@ -36,8 +36,7 @@ const config = {
     devtool: 'eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
-      port: 7070      
-      //historyApiFallback: true
+      port: 7070
     },
     resolve: {
       alias: {
