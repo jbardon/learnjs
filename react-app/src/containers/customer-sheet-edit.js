@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {loadCustomer} from '../actions/customer-sheet';
+import {loadCustomer, saveCustomer} from '../actions/customer-sheet';
 
 import {CustomerSheetEdit} from '../components/customers/customer-sheet-edit.jsx';
 
@@ -10,7 +10,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
     return {
-        loadCustomer : (customerId) => dispatch(loadCustomer(customerId))
+        loadCustomer : (customerId) => dispatch(loadCustomer(customerId)),
+        saveCustomer : (customer) => dispatch(saveCustomer(customer))
     };
 };
 

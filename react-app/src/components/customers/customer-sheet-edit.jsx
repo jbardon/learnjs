@@ -5,6 +5,7 @@ export class CustomerSheetEdit extends Component {
 	constructor (props) {
 		super(props)
 		this.formUpdateCustomer = this.formUpdateCustomer.bind(this);
+		this.saveCustomerForm = this.saveCustomerForm.bind(this);
 	}
 
   componentDidMount () {
@@ -18,6 +19,10 @@ export class CustomerSheetEdit extends Component {
 	this.setState(nState);
   }
 
+  saveCustomerForm() {
+	this.props.saveCustomer(this.state);
+  }
+
   render () {
     if(this.state === null || Object.keys(this.state).length === 0)
     {
@@ -25,9 +30,16 @@ export class CustomerSheetEdit extends Component {
     }
     return (
       <div className="panel panel-info">
-        <div className="panel-heading">
-          <h3 className="panel-title">{`${this.state.firstname} ${this.state.lastname}`}</h3>
-        </div>
+		<div className="panel-heading">
+			<div className="row">
+				<div className="col col-xs-6">
+					<h3 className="panel-title">{`${this.state.firstname} ${this.state.lastname}`}</h3>
+				</div>
+				<div className="col col-xs-6 text-right">
+					<button onClick={this.saveCustomerForm} type="button" className="btn btn-sm btn-success">Save</button>
+				</div>
+			</div>
+		</div>
         <div className="panel-body">
           <div className="row">
             <div className="col-md-3 col-lg-3" align="center">
