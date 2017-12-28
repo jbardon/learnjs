@@ -1,7 +1,7 @@
 function CustomersRest ($resource, $q) {
 
 	var resource = $resource(
-		'http://localhost:3000/customers/:id', {},
+		'http://localhost:3001/customers/:id', {},
 		{
 			getAll: {
 				method: 'GET',

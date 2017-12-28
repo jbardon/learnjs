@@ -2,7 +2,7 @@ import 'whatwg-fetch';
 
 export const loadCustomer = (customerId) => {
   return (dispatch, getState) => {
-    return fetch('http://localhost:3000/customers/' + customerId)
+    return fetch('http://localhost:3001/customers/' + customerId)
     .then(
       response => response.json(),
       error => console.log('An error occurred.', error)

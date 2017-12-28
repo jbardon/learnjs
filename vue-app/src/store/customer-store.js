@@ -14,7 +14,7 @@ const mutations = {
 
 const actions = {
     loadCustomer (context, customerId) {
-        return fetch('http://localhost:3000/customers/' + customerId)
+        return fetch('http://localhost:3001/customers/' + customerId)
         .then(
           response => response.json(),
           error => console.log('An error occurred.', error)

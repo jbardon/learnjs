@@ -14,4 +14,4 @@ export const customers = (state = initialState, action) => {
     default:
         return state;
   }
-}
+};

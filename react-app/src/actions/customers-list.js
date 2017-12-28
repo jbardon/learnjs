@@ -10,7 +10,7 @@ export const clearCustomers = () => {
 
 export const loadCustomers = () => {
   return (dispatch, getState) => {
-    return fetch('http://localhost:3000/customers')
+    return fetch('http://localhost:3001/customers')
     .then(
       response => response.json(),
       error => console.log('An error occurred.', error)

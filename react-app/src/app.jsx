@@ -3,6 +3,7 @@ import {Link, Route, Switch} from 'react-router-dom';
 
 import {CustomersListContainer} from './containers/customers-list';
 import {CustomerSheetContainer} from './containers/customer-sheet';
+import {CustomerSheetEditContainer} from './containers/customer-sheet-edit';
 import {Dashboard} from './components/dashboard/dashboard.jsx';
 
 export const App = () => {
@@ -30,7 +31,8 @@ export const App = () => {
       <Switch>
         <Route exact path='/' component={Dashboard}/>
         <Route exact path='/customers' component={CustomersListContainer}/>
-        <Route path='/customers/:id' component={CustomerSheetContainer}/>
+        <Route exact path='/customers/:id' component={CustomerSheetContainer}/>
+        <Route path='/customers/:id/edit' component={CustomerSheetEditContainer}/>
       </Switch>
       { /*
         customers && (
@@ -40,4 +42,4 @@ export const App = () => {
       */}
     </div>
   )
-}
+};

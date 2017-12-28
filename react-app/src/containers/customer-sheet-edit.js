@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {loadCustomer} from '../actions/customer-sheet';
 
-import {CustomerSheet} from '../components/customers/customer-sheet.jsx';
+import {CustomerSheetEdit} from '../components/customers/customer-sheet-edit.jsx';
 
 const mapStateToProps = state => {
     return {
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export const CustomerSheetContainer = connect(mapStateToProps, mapDispatchToProps)(CustomerSheet);
+export const CustomerSheetEditContainer = connect(mapStateToProps, mapDispatchToProps)(CustomerSheetEdit);

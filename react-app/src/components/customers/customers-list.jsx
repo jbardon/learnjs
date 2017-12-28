@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {CustomersListItem} from './customers-list-item.jsx';
+import {CustomersListItems} from './customers-list-items.jsx';
 
 export class CustomersList extends Component {
   componentDidMount () {
@@ -13,28 +13,6 @@ export class CustomersList extends Component {
 
   render() {
     let hasCustomers = this.props.customers.length >= 1;
-    let customersTable = <div>Pas de clients</div>;
-
-    if (hasCustomers) {
-      customersTable = (
-        <table className="table table-hover table-condensed">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-          {
-            this.props.customers
-              .map(customer => <CustomersListItem key={customer.id} customer={customer}/>)
-          }
-          </tbody>
-        </table>
-      );
-    }
 
     return (
       <div className="panel panel-default panel-table">
@@ -52,7 +30,10 @@ export class CustomersList extends Component {
           </div>
         </div>
         <div className="panel-body">
-          {customersTable}
+          { !hasCustomers ?
+              <div>Pas de clients</div> :
+              <CustomersListItems customers={this.props.customers}></CustomersListItems>
+          }
         </div>
       </div>
     );
