@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React-sync</title>
+</head>
+<body>
+	<div id="app"></div>
+
+	<script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+
+	<!-- A partir de React 15.5, React.createClass n'existe plus -->
+	<script src="https://unpkg.com/create-react-class@15.6.0-rc.0/create-react-class.js"></script>
+	<script src="http://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+
+	<script>
+		var List = createReactClass({
+			// La liste est passée en prop donc immutable
+			// si elle est modifiée par le parent la prop est mise à jour automatiquement
+			deleteLast: function () {
+				this.props.deleteLast();
+			},
+			render: function () {
+				var itemsDom = this.props.items.map(function (item, index) {
+					return React.createElement('li', {key: index}, item.value);
+				});
+				return React.createElement('ul', {style: {border: '1px solid red'}, onClick: this.deleteLast}, itemsDom);
+			}
+		});
+
+		var App = createReactClass({
+			getInitialState: function () {
+				return {
+					items: [{ value: 1 }, { value: 2 }, { value: 3 }]
+				};
+			},
+			// L'enfant ne peut pas modifier la liste (prop)
+			// donc le parent doit modifier le state à sa place
+			// et lui fournir une méthode pour déclencher la modification
+			deleteLast: function () {
+				this.state.items.splice(2, 1);
+				this.setState({items: this.state.items});
+			},
+			clearItems: function () {
+				this.setState({ items: []});
+			},
+			render: function () {
+				return React.createElement('div', {style: {border: '1px solid black'}},
+					React.createElement('input', {type: 'button', value: 'Clear', onClick: this.clearItems}),
+					React.createElement(List, {items: this.state.items, deleteLast: this.deleteLast})
+				);
+			}
+		});
+
+		ReactDOM.render(
+			React.createElement(App),
+			document.getElementById('app')
+		);
+	</script>
+</body>
+</html>

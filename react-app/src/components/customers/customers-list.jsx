@@ -14,9 +14,9 @@ export const CustomersList = props => {
 					</div>
 					<div className="col col-xs-6 text-right">
 						{ !hasCustomers ? null :
-							<button onClick={() => props.clearCustomers()} type="button" className="btn btn-sm btn-danger">Clear</button>
+							<button onClick={props.clearCustomers} type="button" className="btn btn-sm btn-danger">Clear</button>
 						}
-						<button onClick={() => props.addItem()} type="button" className="btn btn-sm btn-success">Create</button>
+						<button onClick={props.addItem} type="button" className="btn btn-sm btn-success">Create</button>
 					</div>
 				</div>
 			</div>

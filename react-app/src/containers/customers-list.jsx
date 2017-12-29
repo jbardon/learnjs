@@ -12,11 +12,16 @@ class CustomersListController extends Component {
 	}
 
 	addItem () {
-		this.props.addCustomer(CustomersAPI.one(99));
+		this.props.addCustomer({
+			id: 99,
+			firstname: 'John',
+			lastname: 'Doe'
+		});
 	}
 
     render() {
 		const props = {
+			...this.props, // Surtout pour injections de l'état redux
 			customers: this.props.customers,
 			addItem: this.addItem
 		};

@@ -12,6 +12,9 @@ class CustomerSheetEditController extends Component {
 		this.state = {};
 
 		this.formUpdateCustomer = this.formUpdateCustomer.bind(this);
+		this.formUpdateCustomerAddress = this.formUpdateCustomerAddress.bind(this);
+		this.formUpdateCustomerContact = this.formUpdateCustomerContact.bind(this);
+
 		this.saveCustomerForm = this.saveCustomerForm.bind(this);
 	}
 
@@ -24,7 +27,22 @@ class CustomerSheetEditController extends Component {
 		const {name, value} = event.target;
 		//const state = Object.assign({}, this.state);
 		this.setState({...this.state, [name]: value});
-		// subvalues ?
+	}
+
+	formUpdateCustomerAddress(event) {
+		const {name, value} = event.target;
+		this.setState({...this.state, address: {
+			...this.state.address,
+			[name]: value
+		}});
+	}
+
+	formUpdateCustomerContact(event) {
+		const {name, value} = event.target;
+		this.setState({...this.state, contact: {
+			...this.state.contact,
+			[name]: value
+		}});
 	}
 
 	saveCustomerForm() {
@@ -33,8 +51,11 @@ class CustomerSheetEditController extends Component {
 
 	render () {
 		const props = {
+			...this.props,
 			customer: {...this.state},
 			formUpdateCustomer: this.formUpdateCustomer,
+			formUpdateCustomerAddress: this.formUpdateCustomerAddress,
+			formUpdateCustomerContact: this.formUpdateCustomerContact,
 			saveCustomerForm: this.saveCustomerForm
 		};
 		return <CustomerSheetEdit {...props} />;
