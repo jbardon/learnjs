@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 
-import {CustomersListContainer} from './containers/customers-list';
-import {CustomerSheetContainer} from './containers/customer-sheet';
-import {CustomerSheetEditContainer} from './containers/customer-sheet-edit';
+import {CustomersListContainer} from './containers/customers-list.jsx';
+import {CustomerSheetContainer} from './containers/customer-sheet.jsx';
+import {CustomerSheetEditContainer} from './containers/customer-sheet-edit.jsx';
 import {Dashboard} from './components/dashboard/dashboard.jsx';
 
 export const App = () => {

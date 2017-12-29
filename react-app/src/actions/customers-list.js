@@ -2,11 +2,11 @@ import 'whatwg-fetch';
 
 export const addCustomer = (customer) => {
   return { type : 'CUSTOMERS_ADD', customer }
-}
+};
 
 export const clearCustomers = () => {
   return { type : 'CUSTOMERS_CLEAR' }
-}
+};
 
 export const loadCustomers = () => {
   return (dispatch, getState) => {
@@ -19,8 +19,8 @@ export const loadCustomers = () => {
         dispatch(customersLoaded(response))
     );
   }
-}
+};
 
 const customersLoaded = (customers) => {
   return { type : 'CUSTOMERS_LOADED', customers }
-}
+};
