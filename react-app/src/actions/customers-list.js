@@ -4,6 +4,10 @@ export const addCustomer = (customer) => {
   return { type : 'CUSTOMERS_ADD', customer }
 };
 
+export const deleteCustomer = (customerId) => {
+    return { type : 'CUSTOMERS_DELETE', customerId }
+};
+
 export const clearCustomers = () => {
   return { type : 'CUSTOMERS_CLEAR' }
 };

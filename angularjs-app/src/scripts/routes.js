@@ -45,7 +45,7 @@ function Routes($stateProvider, $urlRouterProvider) {
 		}
 	});
 
-	$urlRouterProvider.otherwise('home');
+	$urlRouterProvider.otherwise('/');
 }
 
 module.exports = Routes;

@@ -12,8 +12,8 @@
 	</div>
 	<div class="panel-body">
 		<div ng-if="ctrl.customers.length <= 0">Pas de clients</div>
-		<customers-list-items
+		<customers-list-display
 			ng-if="ctrl.customers.length > 0"
-			ng-model="ctrl.customers"></customers-list-items>
+			ng-model="ctrl.customers"></customers-list-display>
 	</div>
 </div>

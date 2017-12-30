@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import {connect} from 'react-redux';
-import {addCustomer, clearCustomers, loadCustomers} from '../actions/customers-list';
+import {addCustomer, deleteCustomer, clearCustomers, loadCustomers} from '../actions/customers-list';
 
 import {CustomersList} from '../components/customers/customers-list.jsx';
 
@@ -37,6 +37,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         addCustomer : (customer) => dispatch(addCustomer(customer)),
+        deleteCustomer : (customerId) => dispatch(deleteCustomer(customerId)),
         clearCustomers : () => dispatch(clearCustomers()),
         loadCustomers : (customers) => dispatch(loadCustomers(customers))
     };

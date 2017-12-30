@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS</title>
+</head>
+<body>
+    <div ng-app="App"> <!-- Correspond au nom d'un module-->
+        <div ng-controller="ListWrapperController as ctrl" style="border: 1px solid black">
+            <input ng-if="ctrl.items.length > 0" ng-click="ctrl.clearItems()" type="button" value="Clear"/>
+            <List ng-model="ctrl.items"></List> <!-- Comme défini dans app.directive -->
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/angular@1.6.8/angular.js"></script>
+    <script>
+        var ListWrapperController = function () {
+            var ctrl = this;
+
+            ctrl.items = [{ value: 1 }, { value: 2 }, { value: 3 }];
+            ctrl.clearItems = function () {
+                ctrl.items = [];
+            }
+        };
+
+        var ListDirective = function () {
+            var template =
+                '<ul ng-click="deleteLast()" style="border: 1px solid red">' +
+                    '<li ng-repeat="item in items">{{item.value}}</li>';
+                '</ul>';
+
+            return {
+                template : template,
+                scope : {
+                    items : '=?ngModel' // Double data-binding
+                },
+                link : function (scope) {
+                    scope.deleteLast = function () {
+                        scope.items.splice(scope.items.length -1, 1);
+                    }
+                }
+            };
+        };
+
+        var app = angular.module('App', []);
+        app.directive('list', ListDirective); // Première lettre lowercase obligatoire (directive)
+        app.controller('ListWrapperController', ListWrapperController); // Nom pour injection de dépendences
+    </script>
+</body>
+</html>

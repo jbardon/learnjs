@@ -1,9 +1,9 @@
-var CustomersListItemsDirective = function() {
+var CustomersListDisplayDirective = function() {
 	return {
 		restrict : 'E',
 		replace : true,
 		required : 'ngModel',
-		templateUrl : 'customer/customers-list-items.tpl.html',
+		templateUrl : 'customer/customers-list-display.tpl.html',
 		scope : {
 			customers : '=?ngModel'
 		},
@@ -16,4 +16,4 @@ var CustomersListItemsDirective = function() {
 	};
 };
 
-module.exports = CustomersListItemsDirective;
+module.exports = CustomersListDisplayDirective;

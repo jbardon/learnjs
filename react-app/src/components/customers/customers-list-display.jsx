@@ -2,7 +2,7 @@ import React from 'react';
 
 import {CustomersListItem} from './customers-list-item.jsx';
 
-export const CustomersListItems = props =>
+export const CustomersListDisplay = props =>
 <table className="table table-hover table-condensed">
   <thead>
     <tr>
@@ -15,7 +15,7 @@ export const CustomersListItems = props =>
   <tbody>
   {
     props.customers
-      .map(customer => <CustomersListItem key={customer.id} customer={customer}/>)
+      .map(customer => <CustomersListItem key={customer.id} customer={customer} deleteCustomer={props.deleteCustomer}/>)
   }
   </tbody>
 </table>;

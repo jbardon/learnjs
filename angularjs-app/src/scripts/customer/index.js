@@ -12,5 +12,5 @@ angular
 
 	// Directives
 	// Le premier caractère doit être en minuscule
-	.directive('customersListItems', require('./directives/CustomersListItemsDirective'))
+	.directive('customersListDisplay', require('./directives/CustomersListDisplayDirective'))
 ;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redux</title>
+</head>
+<body>
+    <script src="https://unpkg.com/redux@3.7.2/dist/redux.js"></script>
+    <script>
+        // Gestion de la partie items du store
+        var itemsReducer = function (state, action) {
+            if(!state) state = [];
+            switch(action.type) {
+                case 'SET': return action.items;
+                case 'CLEAR': return [];
+                case 'CONFLICT': return 'Conflict items';
+                default: return state;
+            }
+        };
+
+        // Optionnel: combine plusieurs reducers
+        var rootReducer = Redux.combineReducers({
+           items: itemsReducer, // Nom d'une propriété de l'état dont la gestion est réservée à ce reducer
+            values: function (state, action) {
+                if(!state) state = {};
+                if(action.type === 'CONFLICT') return 'Conflict values';
+                return state;
+            }
+        });
+
+        // Créé le store principal
+        var initialState = {};
+        var store = Redux.createStore(
+            rootReducer,
+            initialState
+        );
+
+        /* Effectue des actions sur les données du store */
+        console.log('Initial state', store.getState().items);
+
+        store.dispatch({type: 'SET', items: [{ value: 1 }, { value: 2 }, { value: 3 }]});
+        console.log('Action SET', store.getState().items);
+
+        store.dispatch({type: 'CLEAR'});
+        console.log('Action CLEAR', store.getState().items);
+
+        // Un dispatch peut déclencher plusieurs reducers
+        // mais chaque reducer n'impacte que l'état auquel il est rattaché
+        console.log('Before conflict items=', store.getState().items, 'values=', store.getState().values);
+        store.dispatch({type: 'CONFLICT'});
+        console.log('After conflict items=', store.getState().items, 'values=', store.getState().values);
+    </script>
+</body>
+</html>

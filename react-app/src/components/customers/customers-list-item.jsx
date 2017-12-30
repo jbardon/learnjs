@@ -13,7 +13,9 @@ export const CustomersListItem = props =>
     <Link to={`/customers/${props.customer.id}/edit`} className="btn btn-default">
       <i className="fa fa-pencil"></i>
     </Link>
-    <a className="btn btn-default">
+
+    {/* Array function obligatoire pour passer un paramètre autre que l'événement */}
+    <a className="btn btn-default" onClick={() => props.deleteCustomer(props.customer.id)}>
       <i className="fa fa-trash"></i>
     </a>
   </td>

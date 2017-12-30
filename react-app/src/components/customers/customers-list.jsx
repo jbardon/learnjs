@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {CustomersListItems} from './customers-list-items.jsx';
+import {CustomersListDisplay} from './customers-list-display.jsx';
 
 export const CustomersList = props => {
 	let hasCustomers = props.customers.length >= 1;
@@ -23,7 +23,7 @@ export const CustomersList = props => {
 			<div className="panel-body">
 				{ !hasCustomers ?
 					<div>Pas de clients</div> :
-					<CustomersListItems customers={props.customers}></CustomersListItems>
+					<CustomersListDisplay customers={props.customers} deleteCustomer={props.deleteCustomer}></CustomersListDisplay>
 				}
 			</div>
 		</div>
