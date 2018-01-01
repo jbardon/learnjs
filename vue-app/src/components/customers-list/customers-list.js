@@ -1,33 +1,32 @@
-import {mapMutations, mapActions, mapState} from 'vuex';
+import { mapMutations, mapActions, mapState } from 'vuex';
 
+import CustomersListDisplay from './customers-list-display.vue';
 import CustomersListItem from './customers-list-item.vue';
 
 export default {
   components: {
-    CustomersListItem
+    CustomersListDisplay,
+    CustomersListItem,
   },
   computed: {
-    ...mapState(['customers'])
+    ...mapState(['customers']),
   },
-  /*
-  data: function() {
-    return {
-      customers: []
-    };
-  },
-  */
-  beforeMount: function () {
+  beforeMount() {
     return this.loadCustomers();
   },
   methods: {
-    ...mapMutations('customers', ['addCustomer', 'clearCustomers']),
+    ...mapMutations('customers', [
+      'addCustomer',
+      'deleteCustomer',
+      'clearCustomers',
+    ]),
     ...mapActions('customers', ['loadCustomers']),
-    createCustomer: function () {
+    createCustomer() {
       this.addCustomer({
         id: 12,
         firstname: 'First',
-        lastname: 'Last'
+        lastname: 'Last',
       });
-    }
-  }
+    },
+  },
 };

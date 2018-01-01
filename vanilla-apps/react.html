@@ -14,40 +14,32 @@
 	<script src="http://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
 	<script>
         // Ceci est un composant pur (il ne fait que afficher)
-		var List = function (props) {
-            var itemsDom = props.items.map(function (item, index) {
-                return React.createElement('li', {key: index}, item.value);
-            });
-
-            // La liste est passée en prop donc immutable
-            // si elle est modifiée par le parent la prop est mise à jour automatiquement
-            return React.createElement('ul', {style: {border: '1px solid red'}, onClick: props.deleteLast}, itemsDom);
+		var Value = function (props) {
+            // La valeur est passée en prop donc immutable, il faire appel à une fonction fournie par le parent
+            // Cependant si la valeur est modifiée par le parent la prop est mise à jour automatiquement
+            return React.createElement('input', {value: props.value, onChange: props.updateValue});
         };
 
 		var App = createReactClass({
 			getInitialState: function () {
 				return {
-					items: [{ value: 1 }, { value: 2 }, { value: 3 }]
+					value: 'Hello World'
 				};
 			},
-			// L'enfant ne peut pas modifier la liste (prop)
-			// donc le parent doit modifier le state à sa place
-			// et lui fournir une méthode pour déclencher la modification
-			deleteLast: function () {
-				this.state.items.splice(this.state.items.length -1, 1);
-				this.setState({items: this.state.items});
-			},
-			clearItems: function () {
-				this.setState({ items: []});
+			// Fonction utilisée par le parent et l'enfant
+			updateValue: function (event) {
+				this.setState({value: event.target.value});
+
 			},
 			render: function () {
-			    var clearButton = this.state.items.length > 0 ?
-                    React.createElement('input', {type: 'button', value: 'Clear', onClick: this.clearItems}) :
-                    null;
+                // Doit retourner un élément unique
+				return React.createElement('div', null, // Utilise une div car l'input ne peut contenir un noeud (le composant value)
+					React.createElement('input', {value: this.state.value, onChange: this.updateValue}),
 
-				return React.createElement('div', {style: {border: '1px solid black'}},
-                    clearButton,
-					React.createElement(List, {items: this.state.items, deleteLast: this.deleteLast})
+                    // L'enfant ne peut pas modifier la valeur (prop)
+                    // donc le parent doit modifier le state à sa place
+                    // et lui fournir une fonction pour déclencher la modification
+					React.createElement(Value, {value: this.state.value, updateValue: this.updateValue})
 				);
 			}
 		});

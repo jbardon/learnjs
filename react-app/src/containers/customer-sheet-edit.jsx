@@ -1,77 +1,88 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import {connect} from 'react-redux';
-import {loadCustomer, saveCustomer} from '../actions/customer-sheet';
+import { connect } from 'react-redux';
+import { loadCustomer, saveCustomer } from '../actions/customer-sheet';
 
-import {CustomerSheetEdit} from '../components/customers/customer-sheet-edit.jsx';
+import { CustomerSheetEdit } from '../components/customers/customer-sheet-edit.jsx';
 
 class CustomerSheetEditController extends Component {
-	constructor (props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.state = {};
+    this.state = {};
 
-		this.formUpdateCustomer = this.formUpdateCustomer.bind(this);
-		this.formUpdateCustomerAddress = this.formUpdateCustomerAddress.bind(this);
-		this.formUpdateCustomerContact = this.formUpdateCustomerContact.bind(this);
+    this.formUpdateCustomer = this.formUpdateCustomer.bind(this);
+    this.formUpdateCustomerAddress = this.formUpdateCustomerAddress.bind(this);
+    this.formUpdateCustomerContact = this.formUpdateCustomerContact.bind(this);
 
-		this.saveCustomerForm = this.saveCustomerForm.bind(this);
-	}
+    this.saveCustomerForm = this.saveCustomerForm.bind(this);
+  }
 
-	componentDidMount () {
-		this.props.loadCustomer(this.props.match.params.id)
-			.then(data => this.setState(data.customer));
-	}
+  componentDidMount() {
+    this.props
+      .loadCustomer(this.props.match.params.id)
+      .then(data => this.setState(data.customer));
+  }
 
-	formUpdateCustomer(event) {
-		const {name, value} = event.target;
-		//const state = Object.assign({}, this.state);
-		this.setState({...this.state, [name]: value});
-	}
+  formUpdateCustomer(event) {
+    const { name, value } = event.target;
 
-	formUpdateCustomerAddress(event) {
-		const {name, value} = event.target;
-		this.setState({...this.state, address: {
-			...this.state.address,
-			[name]: value
-		}});
-	}
+    // Utiliser this.state ou this.props est une bad practice
+    // React peut faire des batches de modifs
+    // const state = Object.assign({}, this.state);
+    // Les () permettent d'éviter d'écrire: prevState => { return {..} };
+    this.setState(prevState => ({ ...prevState, [name]: value }));
+  }
 
-	formUpdateCustomerContact(event) {
-		const {name, value} = event.target;
-		this.setState({...this.state, contact: {
-			...this.state.contact,
-			[name]: value
-		}});
-	}
+  formUpdateCustomerAddress(event) {
+    const { name, value } = event.target;
+    this.setState(prevState => ({
+      ...prevState,
+      address: {
+        ...prevState.address,
+        [name]: value,
+      },
+    }));
+  }
 
-	saveCustomerForm() {
-		this.props.saveCustomer(this.state);
-	}
+  formUpdateCustomerContact(event) {
+    const { name, value } = event.target;
+    this.setState(prevState => ({
+      ...prevState,
+      contact: {
+        ...prevState.contact,
+        [name]: value,
+      },
+    }));
+  }
 
-	render () {
-		const props = {
-			...this.props,
-			customer: {...this.state},
-			formUpdateCustomer: this.formUpdateCustomer,
-			formUpdateCustomerAddress: this.formUpdateCustomerAddress,
-			formUpdateCustomerContact: this.formUpdateCustomerContact,
-			saveCustomerForm: this.saveCustomerForm
-		};
-		return <CustomerSheetEdit {...props} />;
-	}
+  saveCustomerForm() {
+    this.props.saveCustomer(this.state);
+  }
+
+  render() {
+    const props = {
+      ...this.props,
+      customer: { ...this.state },
+      formUpdateCustomer: this.formUpdateCustomer,
+      formUpdateCustomerAddress: this.formUpdateCustomerAddress,
+      formUpdateCustomerContact: this.formUpdateCustomerContact,
+      saveCustomerForm: this.saveCustomerForm,
+    };
+    return <CustomerSheetEdit {...props} />;
+  }
 }
 
-const mapStateToProps = state => {
-    return {
-        customer: state.customer // Link to reducer partial state
-    };
-};
-const mapDispatchToProps = dispatch => {
-    return {
-        loadCustomer : (customerId) => dispatch(loadCustomer(customerId)),
-        saveCustomer : (customer) => dispatch(saveCustomer(customer))
-    };
-};
+const mapStateToProps = state => ({
+  customer: state.customer, // Link to reducer partial state
+});
 
-export const CustomerSheetEditContainer = connect(mapStateToProps, mapDispatchToProps)(CustomerSheetEditController);
+const mapDispatchToProps = dispatch => ({
+  loadCustomer: customerId => dispatch(loadCustomer(customerId)),
+  saveCustomer: customer => dispatch(saveCustomer(customer)),
+});
+
+export const CustomerSheetEditContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CustomerSheetEditController);

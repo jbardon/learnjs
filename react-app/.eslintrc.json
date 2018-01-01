@@ -1,0 +1,21 @@
+{
+    "extends": [
+        "airbnb-base",
+        "plugin:react/recommended"
+    ],
+    "globals": { // Ces variables existent
+        "fetch": false,
+        "document": false
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "import/prefer-default-export": "off",
+        "react/prop-types": 0,
+        "no-console": ["error", {"allow": ["error"]}],
+        "arrow-parens": [2, "as-needed", { "requireForBlockBody": false }] // Prettier retire les parenthèses pour (prop) => {}
+    }
+}

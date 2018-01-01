@@ -1,13 +1,13 @@
-import {mapActions, mapState} from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   computed: {
-    ...mapState(['customer'])
+    ...mapState(['customer']),
   },
-  beforeMount: function () {
-    this.loadCustomer(this.$route.params.id); 
+  beforeMount() {
+    this.loadCustomer(this.$route.params.id);
   },
   methods: {
-    ...mapActions('customer', ['loadCustomer'])
-  }
+    ...mapActions('customer', ['loadCustomer', 'saveCustomer']),
+  },
 };

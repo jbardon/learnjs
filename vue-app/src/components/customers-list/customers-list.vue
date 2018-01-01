@@ -13,19 +13,7 @@
     </div>
     <div class="panel-body">
       <div v-if="customers.list && customers.list.length <= 0">Pas de clients</div>
-      <table v-else class="table table-hover table-condensed">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <customers-list-item v-for="customer in customers.list" :key="customer.id" :customer="customer"/>
-        </tbody>
-      </table>
+      <customers-list-display v-else :customers="customers.list" :deleteCustomer="deleteCustomer"/>
     </div>
   </div>
 </template>
