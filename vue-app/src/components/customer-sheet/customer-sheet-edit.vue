@@ -24,8 +24,10 @@
                   <td>Gender</td>
                     <td>
                         <!-- v-model fait du double data-binding -->
-                        <input type="radio" name="gender" value="Male" v-model="bean.gender"/>Male
-                        <input type="radio" name="gender" value="Female" v-model="bean.gender"/>Female
+                        <input type="radio" name="gender"
+                               value="Male" v-model="bean.gender"/>Male
+                        <input type="radio" name="gender"
+                               value="Female" v-model="bean.gender"/>Female
                     </td>
                 </tr>
                 <tr>

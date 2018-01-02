@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const CustomersListItem = props => (
+const CustomersListItem = props => (
   <tr>
     <th scope="row">{props.customer.id}</th>
     <td>{props.customer.firstname}</td>
@@ -25,3 +25,5 @@ export const CustomersListItem = props => (
     </td>
   </tr>
 );
+
+export default CustomersListItem;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { CustomersListItem } from './customers-list-item.jsx';
+import CustomersListItem from './customers-list-item.jsx';
 
 // Equivalent de extends React.PureComponent et bind automatiquement componentShouldUpdate
-export const CustomersListDisplay = props => (
+const CustomersListDisplay = props => (
   <table className="table table-hover table-condensed">
     <thead>
       <tr>
@@ -24,3 +24,5 @@ export const CustomersListDisplay = props => (
     </tbody>
   </table>
 );
+
+export default CustomersListDisplay;

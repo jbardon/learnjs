@@ -13,7 +13,7 @@ Vue.use(VueRouter);
 // Vue.component('customer-sheet', CustomerSheet);
 // Vue.component('customer-sheet-list', CustomerSheetEdit);
 
-export const router = new VueRouter({
+const router = new VueRouter({
   routes: [
     { path: '/', component: Dashboard },
     { path: '/customers', component: CustomersList },
@@ -21,3 +21,5 @@ export const router = new VueRouter({
     { path: '/customer/:id/edit', component: CustomerSheetEdit },
   ],
 });
+
+export default router;

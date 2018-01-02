@@ -1,6 +1,6 @@
 const initialState = {};
 
-export default (state = initialState, action) => {
+const customer = (state = initialState, action) => {
   switch (action.type) {
     case 'CUSTOMER_LOADED':
       return action.customer;
@@ -10,3 +10,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default customer;

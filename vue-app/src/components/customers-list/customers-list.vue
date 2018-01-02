@@ -6,8 +6,10 @@
           <h3 class="panel-title">Customers list</h3>
         </div>
         <div class="col col-xs-6 text-right">
-          <button v-if="customers.list && customers.list.length > 0" @click="clearCustomers" type="button" class="btn btn-sm btn-danger">Clear</button>
-          <button type="button" @click="createCustomer" class="btn btn-sm btn-success">Create</button>
+          <button v-if="customers.list && customers.list.length > 0"
+                  @click="clearCustomers" type="button" class="btn btn-sm btn-danger">Clear</button>
+          <button type="button" @click="createCustomer"
+                  class="btn btn-sm btn-success">Create</button>
         </div>
       </div>
     </div>

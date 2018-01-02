@@ -1,6 +1,6 @@
 const initialState = [];
 
-export default (state = initialState, action) => {
+const customers = (state = initialState, action) => {
   switch (action.type) {
     case 'CUSTOMERS_ADD':
       return [...state, action.customer];
@@ -14,3 +14,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default customers;

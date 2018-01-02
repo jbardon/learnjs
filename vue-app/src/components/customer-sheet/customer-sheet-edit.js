@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import CustomerSheet from './customer-sheet.vue';
 
-export default {
+const CustomerSheetEdit = {
   mixins: [CustomerSheet],
   data: () => ({
     bean: {},
@@ -22,3 +22,5 @@ export default {
     },
   },
 };
+
+export default CustomerSheetEdit;

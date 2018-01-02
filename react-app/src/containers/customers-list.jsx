@@ -8,7 +8,7 @@ import {
   loadCustomers,
 } from '../actions/customers-list';
 
-import { CustomersList } from '../components/customers/customers-list.jsx';
+import CustomersList from '../components/customers/customers-list.jsx';
 
 class CustomersListController extends Component {
   componentDidMount() {
@@ -45,7 +45,8 @@ const mapDispatchToProps = dispatch => ({
   loadCustomers: customers => dispatch(loadCustomers(customers)),
 });
 
-export const CustomersListContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CustomersListController);
+const CustomersListContainer = connect(mapStateToProps, mapDispatchToProps)(
+  CustomersListController,
+);
+
+export default CustomersListContainer;

@@ -1,7 +1,7 @@
 {
   "name": "react-app",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --hot"
+    "start": "webpack-dev-server --progress --colors --hot --open"
   },
   "dependencies": {
     "react": "^16.0.0",
@@ -20,6 +20,7 @@
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.14.0",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",

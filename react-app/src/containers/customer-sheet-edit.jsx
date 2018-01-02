@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadCustomer, saveCustomer } from '../actions/customer-sheet';
 
-import { CustomerSheetEdit } from '../components/customers/customer-sheet-edit.jsx';
+import CustomerSheetEdit from '../components/customers/customer-sheet-edit.jsx';
 
 class CustomerSheetEditController extends Component {
   constructor(props) {
@@ -82,7 +82,8 @@ const mapDispatchToProps = dispatch => ({
   saveCustomer: customer => dispatch(saveCustomer(customer)),
 });
 
-export const CustomerSheetEditContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CustomerSheetEditController);
+const CustomerSheetEditContainer = connect(mapStateToProps, mapDispatchToProps)(
+  CustomerSheetEditController,
+);
+
+export default CustomerSheetEditContainer;

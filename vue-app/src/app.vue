@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <div>
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">

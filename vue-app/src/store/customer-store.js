@@ -20,7 +20,7 @@ const actions = {
     return fetch(`http://localhost:3001/customers/${customerId}`)
       .then(
         response => response.json(),
-        error => console.log('An error occurred.', error),
+        error => console.error('An error occurred.', error),
       )
       .then(response => context.commit('customerLoaded', response));
   },
@@ -32,15 +32,17 @@ const actions = {
     })
       .then(
         response => response.json(),
-        error => console.log('An error occurred.', error),
+        error => console.error('An error occurred.', error),
       )
       .then(response => context.commit('customerSaved', response));
   },
 };
 
-export const CustomerStore = {
+const CustomerStore = {
   namespaced: true,
   defaultState,
   mutations,
   actions,
 };
+
+export default CustomerStore;

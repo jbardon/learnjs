@@ -3,7 +3,7 @@ import { mapMutations, mapActions, mapState } from 'vuex';
 import CustomersListDisplay from './customers-list-display.vue';
 import CustomersListItem from './customers-list-item.vue';
 
-export default {
+const CustomersList = {
   components: {
     CustomersListDisplay,
     CustomersListItem,
@@ -30,3 +30,5 @@ export default {
     },
   },
 };
+
+export default CustomersList;

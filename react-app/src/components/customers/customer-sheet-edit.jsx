@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const CustomerSheetEdit = props => {
+const CustomerSheetEdit = props => {
   if (props.customer === null || Object.keys(props.customer).length === 0) {
     return <div>Chargement en cours</div>;
   }
@@ -107,3 +107,5 @@ export const CustomerSheetEdit = props => {
     </div>
   );
 };
+
+export default CustomerSheetEdit;

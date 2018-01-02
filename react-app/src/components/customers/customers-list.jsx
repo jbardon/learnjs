@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { CustomersListDisplay } from './customers-list-display.jsx';
+import CustomersListDisplay from './customers-list-display.jsx';
 
-export const CustomersList = props => {
+const CustomersList = props => {
   const hasCustomers = props.customers.length >= 1;
 
   return (
@@ -43,3 +43,5 @@ export const CustomersList = props => {
     </div>
   );
 };
+
+export default CustomersList;

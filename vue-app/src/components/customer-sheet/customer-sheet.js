@@ -1,6 +1,6 @@
 import { mapActions, mapState } from 'vuex';
 
-export default {
+const CustomerSheet = {
   computed: {
     ...mapState(['customer']),
   },
@@ -11,3 +11,5 @@ export default {
     ...mapActions('customer', ['loadCustomer', 'saveCustomer']),
   },
 };
+
+export default CustomerSheet;

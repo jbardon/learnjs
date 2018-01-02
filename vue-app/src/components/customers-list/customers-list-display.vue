@@ -9,7 +9,10 @@
     </tr>
     </thead>
     <tbody>
-      <customers-list-item v-for="customer in props.customers" :key="customer.id" :customer="customer" :deleteCustomer="props.deleteCustomer"/>
+      <customers-list-item v-for="customer in props.customers"
+                           :key="customer.id"
+                           :customer="customer"
+                           :deleteCustomer="props.deleteCustomer"/>
     </tbody>
   </table>
 </template>

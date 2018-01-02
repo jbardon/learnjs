@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import { customers } from './customers-list';
-import { customer } from './customer-sheet';
+import customers from './customers-list';
+import customer from './customer-sheet';
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
   customers, // reducer called customers
   customer,
 });
+
+export default rootReducer;

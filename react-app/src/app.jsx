@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 
-import { CustomersListContainer } from './containers/customers-list.jsx';
-import { CustomerSheetContainer } from './containers/customer-sheet.jsx';
-import { CustomerSheetEditContainer } from './containers/customer-sheet-edit.jsx';
-import { Dashboard } from './components/dashboard/dashboard.jsx';
+import CustomersListContainer from './containers/customers-list.jsx';
+import CustomerSheetContainer from './containers/customer-sheet.jsx';
+import CustomerSheetEditContainer from './containers/customer-sheet-edit.jsx';
+import Dashboard from './components/dashboard/dashboard.jsx';
 
-export const App = () => (
+const App = () => (
   <div>
     <nav className="navbar navbar-inverse navbar-static-top">
       <div className="container-fluid">
@@ -15,7 +15,6 @@ export const App = () => (
             React-App
           </a>
         </div>
-
         <div className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
             <li className="active">
@@ -46,3 +45,5 @@ export const App = () => (
   */}
   </div>
 );
+
+export default App;
