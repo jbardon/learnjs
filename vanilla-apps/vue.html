@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+    <div id="vm"></div>
+
+    <!-- Définition en x-template pour éviter le dom parser et ne pas utiliser la fonction render, ni le définir en string dans le composant -->
+    <!-- Id utilisé dans la définition du composant (attribut template) -->
+    <script type="text/x-template" id="app">
+        <div> <!-- Le template d'un composant doit avoir un seul élément racine -->
+            <input type="text" v-model="value"/> <!-- Double data-binding -->
+            <value :value.sync="value"></value> <!-- ':' simple binding '.sync' pour le double -->
+        </div>
+    </script>
+
+    <!-- Ici contient le complilateur de template, pas comme dans le répository npm qui expose vue.runtime.js par défaut (qui ne contient pas le compilateur de template -->
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+    <script>
+
+        // Composants Vue définis avec l'attribut components du composant qui les utilisent
+        var Value = {
+          // Simple data binding de la valeur
+          // L'événement update:value est générique grâce au .sync lié à value
+          template: '<input type="text" :value="value" @input="$emit(\'update:value\', $event.target.value)"/>',
+
+          // Données non mutables passés à l'appel du composant
+          props: ['value']
+        };
+
+        var App = {
+          // ID de l'élément DOM de type text/x-template contenant le template
+          template: '#app',
+          components: {
+            'value': Value
+          },
+
+          // Donnés mutables locales
+          data: function(){
+            return {
+              value: 'Hello World'
+            }
+          }
+        };
+
+        // Instance Vue (ce n'est pas un composant)
+      var vm = new Vue({
+        el: '#vm',
+
+        // Définition des autres composants (utilisés dans le template) localement, pas disponibles ailleurs
+        // Possible de les définir globalement avec Vue.component('app', App);
+        components: {
+          'app': App,
+        },
+
+        // Evite d'inclure le template de l'instance dans le DOM (pour éviter le DOM parser)
+        render: function(createElement) {
+          return createElement(App);
+        }
+      });
+    </script>
+</body>
+</html>
