@@ -49,6 +49,9 @@
     </profile>
     <version value="1.0" />
   </component>
+  <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{tsconfig$roots}" />
+  </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
@@ -85,6 +88,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/angular-app/angular-app.iml" filepath="$PROJECT_DIR$/angular-app/angular-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/angularjs-app/angularjs-app.iml" filepath="$PROJECT_DIR$/angularjs-app/angularjs-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/mock-api/mock-api.iml" filepath="$PROJECT_DIR$/mock-api/mock-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/react-app/react-app.iml" filepath="$PROJECT_DIR$/react-app/react-app.iml" />
@@ -137,7 +141,25 @@
       <method />
     </configuration>
   </component>
+  <component name="TypeScriptCompiler">
+    <option name="isCompilerEnabled" value="true" />
+    <option name="useConfig" value="true" />
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="tsconfig$roots" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$PROJECT_DIR$/angular-app/node_modules" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/angular-app/node_modules" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
