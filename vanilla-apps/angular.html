@@ -7,8 +7,40 @@
 <body>
     <div ng-app="App"></div>
 
+    <!--
+        https://www.eduonix.com/blog/web-programming-tutorials/learn-write-angular-2-code-es5/
+        https://blog.thoughtram.io/angular/2015/05/09/writing-angular-2-code-in-es5.html
+        http://www.mograblog.com/2016/07/the-many-ways-of-running-typescript.html
+    -->
+    <script src="https://rawgit.com/Microsoft/TypeScript/master/lib/typescriptServices.js"></script>
+    <script src="https://rawgit.com/basarat/typescript-script/master/transpiler.js"></script>
+
     <script src="https://unpkg.com/systemjs@0.20.19/dist/system.src.js"></script>
+    <script src="https://unpkg.com/@angular/platform-browser-dynamic@2.0.0-rc.5/bundles/platform-browser-dynamic.umd.js"></script>
+    <script src="https://unpkg.com/@angular/platform-browser@2.0.0-rc.5/bundles/platform-browser.umd.js"></script>
+    <script src="https://unpkg.com/@angular/core@2.0.0-rc.5/bundles/core.umd.js"></script>
     <script>
+
+      var AppComponent = function() {
+        this.message = 'Hello World';
+      };
+
+      AppComponent.annotations = [ new ng.core.Component({
+        selector : 'app',
+        templateUrl : '<div>{{message}}</div>',
+      })];
+
+      var AppModule = function AppModule() {}
+      AppModule.annotations = [
+        new ng.core.NgModule({
+          imports: [ng.platformBrowser.BrowserModule],
+          declarations: [AppComponent],
+          bootstrap: [AppComponent]
+        })
+      ];
+
+      ng.platformBrowserDynamic.platformBrowserDynamic().bootstrapModule(AppModule);
+        /*
       SystemJS.config({
         transpiler: 'typescript',
         paths: {
@@ -19,7 +51,8 @@
           'typescript': 'npm:typescript@2.2.1/lib/typescript.js'
         }
       });
-function App() {
+      */
+        /*
   import {Component, NgModule} from '@angular/core'
 
   @Component({
@@ -36,7 +69,7 @@ function App() {
   })
   export class AppModule {}
 }
-    SystemJS.register('app', null, App);
+*/
 
     </script>
 </body>
