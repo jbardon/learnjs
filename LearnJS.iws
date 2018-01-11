@@ -4,12 +4,9 @@
     <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="253e59dc-301a-4144-9761-b7bd47ca28c7" name="Default" comment="Fail angular">
+    <list default="true" id="253e59dc-301a-4144-9761-b7bd47ca28c7" name="Default" comment="Angular marche avec zone.js">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LearnJS.ipr" afterPath="$PROJECT_DIR$/LearnJS.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LearnJS.iws" afterPath="$PROJECT_DIR$/LearnJS.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-app/package.json" afterPath="$PROJECT_DIR$/angular-app/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular-app/tsconfig.json" afterPath="$PROJECT_DIR$/angular-app/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angularjs-app/package.json" afterPath="$PROJECT_DIR$/angularjs-app/package.json" />
     </list>
     <ignored path="LearnJS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,102 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue-app/webpack.config.js">
+      <file leaf-file-name="main.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/angular-app/src/main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react-app/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="65" lean-forward="false" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angularjs.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vanilla-apps/angularjs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="49" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="12" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vanilla-apps/vue.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angular.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vanilla-apps/angular.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="81" lean-forward="false" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="browserify.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularjs-app/gulp/tasks/browserify.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="3" lean-forward="false" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/angular-app/tsconfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-app/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularjs-app/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customer-sheet.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue-app/src/components/customer-sheet/customer-sheet.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="85">
+              <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+              <folding>
+                <element signature="e#53#126#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,6 +77,7 @@
       <find>func</find>
       <find>funct</find>
       <find>functio</find>
+      <find>Book</find>
     </findStrings>
     <replaceStrings>
       <replace>className</replace>
@@ -196,14 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/angularjs-app/src/scripts/routes.js" />
-        <option value="$PROJECT_DIR$/angularjs-app/src/scripts/customer/directives/CustomersListDisplayDirective.js" />
-        <option value="$PROJECT_DIR$/angularjs-app/src/views/customer/customers-list.tpl.html" />
-        <option value="$PROJECT_DIR$/angularjs-app/src/scripts/customer/index.js" />
-        <option value="$PROJECT_DIR$/react-app/src/components/customers/customers-list-items.jsx" />
-        <option value="$PROJECT_DIR$/vanilla-apps/angularjs.html" />
-        <option value="$PROJECT_DIR$/vanilla-apps/react.html" />
-        <option value="$PROJECT_DIR$/vanilla-apps/javascript.html" />
         <option value="$PROJECT_DIR$/vue-app/src/components/dashboard/dashboard.vue" />
         <option value="$PROJECT_DIR$/vue-app/src/components/customers-list/customers-list-item.vue" />
         <option value="$PROJECT_DIR$/react-app/src/actions/customer-sheet.js" />
@@ -245,7 +147,15 @@
         <option value="$PROJECT_DIR$/vanilla-apps/vue.html" />
         <option value="$PROJECT_DIR$/vanilla-apps/angular.html" />
         <option value="$PROJECT_DIR$/angularjs-app/package.json" />
+        <option value="$PROJECT_DIR$/../readings/Intro.md" />
+        <option value="$PROJECT_DIR$/../readings/Book 2.md" />
+        <option value="$PROJECT_DIR$/../readings/Book 3.md" />
+        <option value="$PROJECT_DIR$/../readings/Book 4.md" />
+        <option value="$PROJECT_DIR$/../readings/README.md" />
         <option value="$PROJECT_DIR$/angular-app/package.json" />
+        <option value="$PROJECT_DIR$/angular-app/webpack.config.js" />
+        <option value="$PROJECT_DIR$/angular-app/src/app/app.cmp.ts" />
+        <option value="$PROJECT_DIR$/angular-app/src/main.ts" />
         <option value="$PROJECT_DIR$/angular-app/tsconfig.json" />
       </list>
     </option>
@@ -270,10 +180,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-285" />
-    <option name="y" value="-20" />
-    <option name="width" value="1920" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -440,18 +350,22 @@
             </path>
             <path>
               <item name="LearnJS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="angularjs-app" type="462c0819:PsiDirectoryNode" />
+              <item name="angular-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LearnJS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="angularjs-app" type="462c0819:PsiDirectoryNode" />
-              <item name="gulp" type="462c0819:PsiDirectoryNode" />
+              <item name="angular-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LearnJS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="angularjs-app" type="462c0819:PsiDirectoryNode" />
-              <item name="gulp" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+              <item name="react-app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LearnJS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -465,32 +379,32 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../readings" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/angularjs-app/node_modules/gulp" />
     <property name="SearchEverywhereHistoryKey" value="customeredit&#9;FILE&#9;file:///Volumes/Data/Projets/learnjs/react-app/src/containers/customer-sheet-edit.jsx&#10;customeedit&#9;FILE&#9;file:///Volumes/Data/Projets/learnjs/react-app/src/containers/customer-sheet-edit.jsx&#10;customersheeedit&#9;FILE&#9;file:///Volumes/Data/Projets/learnjs/react-app/src/containers/customer-sheet-edit.jsx&#10;customed&#9;FILE&#9;file:///Volumes/Data/Projets/learnjs/react-app/src/containers/customer-sheet-edit.jsx&#10;customerlist&#9;FILE&#9;file:///Volumes/Data/Projets/learnjs/react-app/src/components/customers/customers-list-item.jsx&#10;Direc&#9;FILE&#9;file:///Volumes/Data/Projets/learnjs/angularjs-app/src/scripts/customer/directives/CustomersListItemsDirective.js&#10;customerlistc&#9;FILE&#9;file://D:/perso/learnjs/angularjs-app/src/scripts/customer/controllers/CustomersListController.js&#10;rest&#9;FILE&#9;file://D:/perso/learnjs/angularjs-app/src/scripts/rest/CustomersRest.js&#10;customserv&#9;FILE&#9;file:///Volumes/Data/Projets/news/angularjs-app/src/scripts/customer/services/CustomersListService.js&#10;listser&#9;FILE&#9;file:///Volumes/Data/Projets/news/angularjs-app/src/scripts/customer/services/CustomersListService.js&#10;service&#9;FILE&#9;file:///Volumes/Data/Projets/news/angularjs-app/src/scripts/customer/services/CustomerSheetService.js" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="nodejs_interpreter_path" value="D:/Front/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="/usr/local/lib/node_modules/eslint" />
+    <property name="node.js.selected.package.eslint" value="\usr\local\lib\node_modules\eslint" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.selected.package.standard" value="/usr/local/lib/node_modules/eslint" />
+    <property name="node.js.selected.package.standard" value="\usr\local\lib\node_modules\eslint" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\perso\learnjs\angular-app" />
       <recent name="D:\perso\learnjs\vanilla-apps" />
       <recent name="$PROJECT_DIR$/vue-app" />
       <recent name="$PROJECT_DIR$/vue-app/src/components/customers-list" />
       <recent name="$PROJECT_DIR$/vue-app/src/components/customer-sheet" />
-      <recent name="D:\perso\learnjs\react-app\src\components\customers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -505,7 +419,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Dev VueApp">
+  <component name="RunManager" selected="npm.Run AngularApp">
+    <configuration name="Run AngularApp" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/angular-app/package.json" />
+      <command value="start" />
+      <node-interpreter value="D:/Front/node" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -930,13 +850,14 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Debug VueApp" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Debug AngularJsApp" />
-      <item index="2" class="java.lang.String" itemvalue="Gulp.js.Dev AngularJsApp" />
-      <item index="3" class="java.lang.String" itemvalue="npm.Run MockApi" />
-      <item index="4" class="java.lang.String" itemvalue="npm.Dev ReactApp" />
-      <item index="5" class="java.lang.String" itemvalue="npm.Dev VueApp" />
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Gulp.js.Dev AngularJsApp" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Debug VueApp" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Debug AngularJsApp" />
+      <item index="3" class="java.lang.String" itemvalue="npm.Run AngularApp" />
+      <item index="4" class="java.lang.String" itemvalue="npm.Run MockApi" />
+      <item index="5" class="java.lang.String" itemvalue="npm.Dev ReactApp" />
+      <item index="6" class="java.lang.String" itemvalue="npm.Dev VueApp" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -1002,14 +923,15 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45068493" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45068493" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2185501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23081024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33561644" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1028,7 +950,6 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1066,6 +987,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/angular-app/src/main.js.map" />
+        <option value="$PROJECT_DIR$/angular-app/src/main.js" />
+        <option value="$PROJECT_DIR$/angular-app/src/app/app.cmp.js.map" />
+        <option value="$PROJECT_DIR$/angular-app/src/app/app.mod.js.map" />
+        <option value="$PROJECT_DIR$/angular-app/src/app/app.cmp.js" />
+        <option value="$PROJECT_DIR$/angular-app/src/app/app.mod.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -1086,7 +1017,10 @@
     <MESSAGE value="More vanilla js, fix list component name, delete customer in react" />
     <MESSAGE value="Vue input example" />
     <MESSAGE value="Fail angular" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fail angular" />
+    <MESSAGE value="Compile angular" />
+    <MESSAGE value="Division en livres" />
+    <MESSAGE value="Angular marche avec zone.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Angular marche avec zone.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1099,91 +1033,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vue-app/package-lock.json" />
-    <entry file="file://$PROJECT_DIR$/angularjs-app/src/scripts/customer/controllers/CustomerSheetController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-app/src/components/customers-list/customers-list-item.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="83" lean-forward="false" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/src/actions/customer-sheet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/src/actions/customers-list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-app/src/components/customer-sheet/customer-sheet-edit.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-app/src/components/customer-sheet/customer-sheet.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-app/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/src/components/customers/customer-sheet.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/src/components/customers/customer-sheet-edit.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="110" column="33" lean-forward="false" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/src/components/customers/customers-list-display.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/src/components/customers/customers-list-item.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/react-app/src/components/dashboard/dashboard.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1377,16 +1226,8 @@
         <state relative-caret-position="306">
           <caret line="18" column="3" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="18" selection-end-column="3" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-app/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,14 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="35" column="133" lean-forward="false" selection-start-line="35" selection-start-column="133" selection-end-line="35" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="65" lean-forward="false" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1453,19 +1286,268 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular-app/package.json">
+    <entry file="file://$PROJECT_DIR$/../readings/Intro.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="243">
+            <caret line="79" column="14" lean-forward="false" selection-start-line="79" selection-start-column="14" selection-end-line="79" selection-end-column="14" />
+            <folding>
+              <marker date="1515586060086" expanded="true" signature="890:910" ph="{...}" />
+              <marker date="1515586060086" expanded="true" signature="945:965" ph="{...}" />
+              <marker date="1515586060086" expanded="true" signature="1112:1279" ph="{...}" />
+              <marker date="1515586060086" expanded="true" signature="1115:1224" ph="//..." />
+              <marker date="1515586060086" expanded="true" signature="1242:1262" ph="{...}" />
+              <marker date="1515586060086" expanded="true" signature="1587:1742" ph="{...}" />
+              <marker date="1515586060086" expanded="true" signature="1641:1681" ph="{...}" />
+              <marker date="1515586060086" expanded="true" signature="1699:1720" ph="{&quot;login&quot;: doLogin...}" />
+              <marker date="1515586060086" expanded="true" signature="2018:2047" ph="{...}" />
+              <marker date="1515586060086" expanded="true" signature="2081:2108" ph="{&quot;bar&quot;: &quot;obj1&quot;...}" />
+              <marker date="1515586060086" expanded="true" signature="2122:2138" ph="{&quot;bar&quot;: &quot;obj2&quot;...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../readings/Book 2.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="835">
+            <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+            <folding>
+              <marker date="1515586060083" expanded="true" signature="2575:2785" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="2594:2685" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="2713:2783" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="4901:4972" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="4932:4956" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="5079:5213" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="5111:5201" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="5397:5465" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="5428:5452" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="5503:5639" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="5518:5630" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="5590:5616" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="5718:5786" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="5749:5773" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="6273:6560" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="6294:6362" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="6386:6411" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="6435:6474" ph="{...}" />
+              <marker date="1515586060083" expanded="true" signature="6493:6537" ph="{&quot;change&quot;: change...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../readings/Book 3.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="277">
+            <caret line="496" column="0" lean-forward="false" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
+            <folding>
+              <marker date="1515586060084" expanded="true" signature="239:275" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="331:370" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="522:585" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="622:639" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="675:693" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="869:897" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="914:941" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="1506:1533" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="1805:1832" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="2164:2189" ph="//..." />
+              <marker date="1515586060084" expanded="true" signature="2210:2238" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="2616:2682" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="3378:3402" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="3438:3553" ph="//..." />
+              <marker date="1515586060084" expanded="true" signature="4367:4407" ph="//..." />
+              <marker date="1515586060084" expanded="true" signature="5670:5700" ph="//..." />
+              <marker date="1515586060084" expanded="true" signature="5716:5747" ph="{&quot;null&quot;: &quot;hello&quot;...}" />
+              <marker date="1515586060084" expanded="true" signature="5907:5916" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="5969:6267" ph="//..." />
+              <marker date="1515586060084" expanded="true" signature="7092:7191" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="7131:7154" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="7168:7189" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="7263:7423" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="7267:7309" ph="//..." />
+              <marker date="1515586060084" expanded="true" signature="8109:8228" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="8142:8226" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="8153:8222" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="8175:8218" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="8277:8376" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="9121:9181" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="9230:9332" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="9349:9454" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="9369:9452" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="11793:11815" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="11851:11873" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="12239:12288" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="12290:12357" ph="//..." />
+              <marker date="1515586060084" expanded="true" signature="12593:12616" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="13566:13618" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="13586:13616" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="13724:13763" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="14012:14105" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="14212:14255" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="14293:14342" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="14930:15014" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="14958:14971" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="14991:15004" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="15287:15295" ph="/*...*/" />
+              <marker date="1515586060084" expanded="true" signature="15333:15341" ph="/*...*/" />
+              <marker date="1515586060084" expanded="true" signature="15612:15661" ph="//..." />
+              <marker date="1515586060084" expanded="true" signature="15849:15868" ph="//..." />
+              <marker date="1515586060084" expanded="true" signature="15887:15907" ph="{...}" />
+              <marker date="1515586060084" expanded="true" signature="15934:15942" ph="/*...*/" />
+              <marker date="1515586060084" expanded="true" signature="16124:16173" ph="//..." />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../readings/readings.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../readings/Book 4.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="328">
+            <caret line="316" column="3" lean-forward="false" selection-start-line="316" selection-start-column="3" selection-end-line="316" selection-end-column="3" />
+            <folding>
+              <marker date="1515586060085" expanded="true" signature="883:908" ph="/*...*/" />
+              <marker date="1515586060085" expanded="true" signature="982:1057" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="1027:1052" ph="/*...*/" />
+              <marker date="1515586060085" expanded="true" signature="1352:1404" ph="//..." />
+              <marker date="1515586060085" expanded="true" signature="2291:2340" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="2927:2986" ph="//..." />
+              <marker date="1515586060085" expanded="true" signature="3013:3044" ph="//..." />
+              <marker date="1515586060085" expanded="true" signature="3242:3309" ph="//..." />
+              <marker date="1515586060085" expanded="true" signature="3326:3385" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="3346:3369" ph="//..." />
+              <marker date="1515586060085" expanded="true" signature="3797:3856" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="3937:4046" ph="//..." />
+              <marker date="1515586060085" expanded="true" signature="4286:4364" ph="//..." />
+              <marker date="1515586060085" expanded="true" signature="4397:4553" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="5629:5661" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="5829:5898" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="5901:5964" ph="//..." />
+              <marker date="1515586060085" expanded="true" signature="7548:7698" ph="//..." />
+              <marker date="1515586060085" expanded="true" signature="8317:8393" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="10345:10434" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="10372:10432" ph="{...}" />
+              <marker date="1515586060085" expanded="true" signature="11367:11373" ph="[...]" />
+              <marker date="1515586060085" expanded="true" signature="11982:12052" ph="..." />
+              <marker date="1515586060085" expanded="true" signature="12067:12107" ph="..." />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../readings/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="204">
+            <caret line="12" column="98" lean-forward="false" selection-start-line="12" selection-start-column="98" selection-end-line="12" selection-end-column="98" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <caret line="3" column="65" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-app/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/app/app.mod.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/app/app.cmp.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="106" lean-forward="false" selection-start-line="24" selection-start-column="106" selection-end-line="24" selection-end-column="106" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular-app/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+        <state relative-caret-position="51">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="58" lean-forward="false" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-app/src/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <folding>
+            <element signature="e#53#126#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1546,6 +1628,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>tsconfig$roots</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -46,7 +46,6 @@
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
-      <inspection_tool class="Eslint" enabled="true" level="ERROR" enabled_by_default="true" />
     </profile>
     <version value="1.0" />
   </component>
@@ -93,6 +92,7 @@
       <module fileurl="file://$PROJECT_DIR$/angularjs-app/angularjs-app.iml" filepath="$PROJECT_DIR$/angularjs-app/angularjs-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/mock-api/mock-api.iml" filepath="$PROJECT_DIR$/mock-api/mock-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/react-app/react-app.iml" filepath="$PROJECT_DIR$/react-app/react-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../readings/readings.iml" filepath="$PROJECT_DIR$/../readings/readings.iml" />
       <module fileurl="file://$PROJECT_DIR$/vanilla-apps/vanilla-apps.iml" filepath="$PROJECT_DIR$/vanilla-apps/vanilla-apps.iml" />
       <module fileurl="file://$PROJECT_DIR$/vue-app/vue-app.iml" filepath="$PROJECT_DIR$/vue-app/vue-app.iml" />
     </modules>
@@ -101,6 +101,15 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Dev AngularJsApp" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/angularjs-app/gulpfile.js</gulpfile>
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="Debug VueApp" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:7070">
       <mapping url="http://localhost:7070" local-file="$PROJECT_DIR$/vue-app" />
       <mapping url="webpack:///." local-file="$PROJECT_DIR$/vue-app/src" />
@@ -109,15 +118,6 @@
     <configuration default="false" name="Debug AngularJsApp" type="JavascriptDebugType" factoryName="JavaScript Debug" activateToolWindowBeforeRun="false" uri="http://localhost:2222">
       <mapping url="http://localhost:2222" local-file="$PROJECT_DIR$/angularjs-app/src/scripts" />
       <mapping url="http://localhost:2222" local-file="$PROJECT_DIR$/angularjs-app" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Dev AngularJsApp" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/angularjs-app/gulpfile.js</gulpfile>
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="false" name="Run MockApi" type="js.build_tools.npm" factoryName="npm">
@@ -143,22 +143,15 @@
     </configuration>
   </component>
   <component name="TypeScriptCompiler">
-    <option name="isCompilerEnabled" value="true" />
     <option name="useConfig" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../readings" vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="tsconfig$roots" type="javaScript">
-      <properties>
-        <sourceFilesUrls>
-          <item url="file://$PROJECT_DIR$/angular-app/node_modules" />
-        </sourceFilesUrls>
-      </properties>
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/angular-app/node_modules" />
-      </CLASSES>
+      <CLASSES />
       <JAVADOC />
       <SOURCES />
     </library>
