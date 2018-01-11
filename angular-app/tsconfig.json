@@ -9,17 +9,12 @@
     "sourceMap": true,
 
     "rootDir": "./src",
-    "outDir": "./dist",
+    //"outDir": "./dist",
 
     "experimentalDecorators": true // Annotations Angular
-  }
-  /*
-    "moduleResolution": "classic",
-    "baseUrl": ".",
-    "paths": {
-      "*": [
-        "node_modules/*"
-      ]
-    },
-  */
+
+  },
+  "exclude": [
+    "./node_modules" // pour webpack
+  ]
 }
