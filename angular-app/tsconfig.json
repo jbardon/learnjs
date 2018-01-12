@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "es2015",
+    //"module": "commonjs",
     "moduleResolution": "node",
     "lib": ["es6", "dom"],
 
@@ -9,10 +10,10 @@
     "sourceMap": true,
 
     "rootDir": "./src",
-    //"outDir": "./dist",
+    "types": ["node"], // Pour utiliser require dans les templates
 
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true // Annotations Angular
-
   },
   "exclude": [
     "./node_modules" // pour webpack

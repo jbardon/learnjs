@@ -1,7 +1,7 @@
 {
   "name": "angular-app",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --hot"
+    "start": "webpack-dev-server --progress --colors --hot --open"
   },
   "dependencies": {
     "@angular/core": "^5.1.3",
@@ -11,6 +11,8 @@
   "devDependencies": {
     "@angular/common": "^5.1.3",
     "@angular/compiler": "^5.1.3",
+    "@types/node": "^9.3.0",
+    "html-loader": "^0.5.4",
     "prettier-webpack-plugin": "^0.2.2",
     "rxjs": "^5.5.6",
     "ts-loader": "^3.2.0",

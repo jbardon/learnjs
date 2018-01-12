@@ -1,9 +1,9 @@
-import {Component, VERSION} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
+    //moduleId: module.id,
     selector: '#app',
-    template: `<h1>{{message}}</h1>`,
+    template: require('./app.cmp.html')
 })
 export class App {
-    message:string = `Hello from Angular ${VERSION.full}`;
 }
