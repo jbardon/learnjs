@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>React</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/react@16.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.24.2/babel.min.js" charset="utf-8"></script> 
+    <script src="https://unpkg.com/fetch@1.1.0/lib/fetch.js" charset="utf-8"></script>
+
+	<div id="app"></div>
+    <script type="text/babel">
+      class Github extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            ready: false
+          };
+          this.changeRepo = this.changeRepo.bind(this);
+        }
+        componentWillMount() {
+          fetch(`https://api.github.com/orgs/${this.props.organisation}/repos`)
+            .then(response => response.json())
+            .then(data => this.setState({loaded: true, repos: data.map(repo => ({'id': repo.id, 'name': repo['name']}))}));
+        }
+        changeRepo({target}) {
+          this.setState(state => ({ ...state, current: target.value}));
+        }
+        render() {
+          if(!this.state.loaded) {
+            return <div>Chargement...</div>;
+          }
+          else {
+            return (
+              <React.Fragment>
+                <input list="repos"/>
+                <datalist id="repos" onChange={this.changeRepo}>
+                  {this.state.repos.map(repo => <option key={repo.id} value={repo.name}/>)}
+                </datalist>
+                <p>Selected: {this.state.current ? this.state.current : '-'}</p>
+              </React.Fragment>
+            );
+          }
+        }
+      }
+
+      ReactDOM.render(
+        <Github organisation="facebook"/>,
+        document.getElementById('app')
+      );
+
+    </script>
+  </body>
+</html>

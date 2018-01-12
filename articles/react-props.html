@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>React</title>
+  </head>
+  <body>
+   
+    <script src="https://unpkg.com/react@16.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.2.0/umd/react-dom.development.js"></script>
+
+    <!-- For JSX support -->
+    <script src="https://unpkg.com/babel-standalone@6.24.2/babel.min.js" charset="utf-8"></script> 
+
+	<div id="app"></div>
+    <script type="text/babel">
+      class Watch extends React.Component {
+        render() {
+          return <div>{this.props.hours}:{this.props.minutes}</div>
+        }
+      }
+      ReactDOM.render(
+        <Watch hours="12" minutes="15"/>,
+        document.getElementById('app')
+      );
+
+    </script>
+  </body>
+</html>
