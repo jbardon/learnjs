@@ -3,3 +3,4 @@ dist
 package-lock.json
 public/bundle.js
 public/*.hot-update*
+.Rproj.user

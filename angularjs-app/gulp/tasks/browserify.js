@@ -16,26 +16,34 @@ gulp.task('browserify', function (cb) {
 	runSequence('bundle-app', 'bundle-vendors', cb);
 });
 
-var makeBundle = function (bundleType) {
+/**
+ * Make a browserify bundle
+ * @param isAppBundle true to bundle application without dependencies, false to bundle dependencies only
+ * @returns {*} bundle
+ */
+var makeBundle = function (isAppBundle) {
   var browerifyParams = {
-    debug: true // pour générer la sourcemap
+    debug: true // generate source map
   };
 
-  if(bundleType === 'app') {
+  // Define if application must be included in bundle
+  if(isAppBundle) {
     browerifyParams.entries = ['./src/scripts/index.js'];
   }
 
+  // Define if dependencies must be included in bundle
   var bundleConfig = browserify(browerifyParams);
-  var browserifyVendorFunction = (bundleType === 'app') ? bundleConfig.external.bind(bundleConfig) : bundleConfig.require.bind(bundleConfig);
+  var browserifyVendorFunction = (isAppBundle) ? bundleConfig.external.bind(bundleConfig) : bundleConfig.require.bind(bundleConfig);
 
-  // Read package.json and get dependencies' package ids
-  var packageManifest = require('../../package.json');
+  // Read package.json and get dependencies package ids
+  var packageManifest = require('package.json');
   var packageIds = Object.keys(packageManifest.dependencies) || [];
   packageIds.forEach(function (id) {
     browserifyVendorFunction(nodeResolve.sync(id), {expose: id});
   });
 
-  var bundleName = bundleType === 'app' ? 'bundle.js' : bundleType + '.js';
+  // Generate bundle
+  var bundleName = (isAppBundle ? 'bundle' : 'vendor') + '.js';
   return bundleConfig.bundle()
     .pipe(source(bundleName))
     .pipe(gulp.dest('./dist'));
