@@ -20,7 +20,7 @@ function CustomerSheetController ($scope, CustomerSheetService, initData) {
 
 		$scope.$watch('ctrl.customer', function() {
 			ctrl.modelChanged = !angular.equals(ctrl.customer, ctrl.customerInitialState);
-		}, true); // Tous les niveaux de l'objet
+		}, true); // Deep watch
 	};
 
 	ctrl.init();

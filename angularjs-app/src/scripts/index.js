@@ -1,7 +1,7 @@
-// Librairies externes
+// External librairies
 require('angular');
-require('@uirouter/angularjs'); // Router pour SPA
-require('angular-resource'); // Appels REST
+require('@uirouter/angularjs'); // Router for SPA
+require('angular-resource'); // ReST calls
 
 require('./customer');
 require('./rest');

@@ -9,6 +9,8 @@
     </tr>
     </thead>
     <tbody>
+      <!-- Use component (name in kebab case) -->
+      <!-- Bind values (one-way) :key is a shorthand for v-bind:key -->
       <customers-list-item v-for="customer in props.customers"
                            :key="customer.id"
                            :customer="customer"

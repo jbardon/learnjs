@@ -27,7 +27,7 @@ const mutations = {
 
 const actions = {
   loadCustomers({ commit }) {
-    return fetch('http://localhost:3001/customers')
+    return fetch('http://localhost:2092/customers')
       .then(
         response => response.json(),
         error => console.error('An error occurred.', error),

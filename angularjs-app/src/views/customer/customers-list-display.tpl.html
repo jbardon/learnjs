@@ -1,4 +1,4 @@
-<!-- 1 élément racine obligatoire -->
+<!-- A single root element required for directives -->
 <table class="table table-hover table-condensed">
 	<thead>
 	<tr>
@@ -9,14 +9,17 @@
 	</tr>
 	</thead>
 	<tbody>
-		<!-- Le DOM parser n'autorise pas autre chose qu'un TR dans un TBODY et un TD dans un TR -->
-		<tr ng-repeat="(index, customer) in customers"> <!-- Il est conseillé d'avoir un objet englobant -->
+		<!--
+			DOM parser doesn't allow anything else rather thant TR in TBODY in TD in TR
+			It is recommanded to alsways have a dot un variables for directives templates: obj.customers
+		-->
+		<tr ng-repeat="(index, customer) in customers">
 
 			<th scope="row">{{customer.id}}</th>
 			<td>{{customer.firstname}}</td>
 			<td>{{customer.lastname}}</td>
 			<td align="center">
-				<!-- Pour utiliser le router [nom de la route]([ params sous forme d'objet ])) -->
+				<!-- To use the router [routeName]([params as objects properties])) -->
 				<a ui-sref="customer-sheet({id: customer.id})" class="btn btn-default">
 					<i class="fa fa-eye"></i>
 				</a>

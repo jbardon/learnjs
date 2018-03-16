@@ -1,3 +1,4 @@
+// https://github.com/angular-ui/ui-router/wiki
 function Routes($stateProvider, $urlRouterProvider) {
 	$stateProvider.state({
 		name: 'home',
@@ -12,7 +13,7 @@ function Routes($stateProvider, $urlRouterProvider) {
 		controllerAs: 'ctrl', // Alias pour le controller dans le template
 		templateUrl: 'customer/customers-list.tpl.html',
 		resolve: {
-			// Injecte le paramètre "initData" au controlleur spécifie
+			// Inject param "initData" to the controller
 			initData: ['CustomersListService', function (CustomersListService) {
 				return CustomersListService.resolveCustomersListController();
 			}]
@@ -45,6 +46,7 @@ function Routes($stateProvider, $urlRouterProvider) {
 		}
 	});
 
+	// Default route
 	$urlRouterProvider.otherwise('/');
 }
 

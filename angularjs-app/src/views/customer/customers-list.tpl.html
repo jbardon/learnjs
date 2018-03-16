@@ -12,6 +12,11 @@
 	</div>
 	<div class="panel-body">
 		<div ng-if="ctrl.customers.length <= 0">Pas de clients</div>
+
+		<!--
+			Use directive with tag name in kebab case ("restrict:'E'" in directive definition)
+			No autoclosing tags for custom tags
+		-->
 		<customers-list-display
 			ng-if="ctrl.customers.length > 0"
 			ng-model="ctrl.customers"></customers-list-display>

@@ -2,11 +2,13 @@ import Vue from 'vue';
 import CustomerSheet from './customer-sheet.vue';
 
 const CustomerSheetEdit = {
-  mixins: [CustomerSheet],
+  mixins: [CustomerSheet], // Delegate to another component
   data: () => ({
+    // Define component variables (as function return)
     bean: {},
   }),
   beforeMount() {
+    // Access route through this.$route
     this.loadCustomer(this.$route.params.id).then(this.setBean);
   },
   computed: {

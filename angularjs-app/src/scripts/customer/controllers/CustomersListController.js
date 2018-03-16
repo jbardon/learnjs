@@ -1,6 +1,6 @@
 function CustomersListController (
 	CustomersListService, 
-	initData) {
+	initData) { // initData is dependency injection manange with router
 
 	var ctrl = this;
 	var svc = CustomersListService;
@@ -14,7 +14,6 @@ function CustomersListController (
 	};
 
 	ctrl.init = function () {
-		// initData est injecté par le router
 		ctrl.customers = initData.customers;
 	};
 

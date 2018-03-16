@@ -1,16 +1,17 @@
 function CustomersRest ($resource, $q) {
-
+  // https://docs.angularjs.org/api/ngResource/service/$resource
 	var resource = $resource(
-		'http://localhost:3001/customers/:id', {},
+		// Replace ":id" in url with given id in params
+		'http://localhost:2092/customers/:id', {},
 		{
 			getAll: {
 				method: 'GET',
-				isArray: true
+				isArray: true // Set to false by default
 			},
 			getById: {
 				method: 'GET',
 				params: {
-					id: '@id'
+					id: '@id' // Refers to ":id" in rul
 				}
 			},
 			save: {
@@ -42,7 +43,7 @@ function CustomersRest ($resource, $q) {
 
 	svc.getById = function (customerId) {
 		return resource.getById({
-			id: customerId
+			id: customerId // Will be use as "id" parameter and replace ":id" in url
 		}).$promise.then(success, failed);
 	};
 

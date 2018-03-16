@@ -1,7 +1,7 @@
 {
   "name": "mock-api",
   "scripts": {
-    "start": "json-server -p 3001 --watch db.json"
+    "start": "json-server -p 2092 --watch db.json"
   },
   "dependencies": {
     "json-server": "^0.12.1"

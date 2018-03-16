@@ -23,7 +23,7 @@
                 <tr>
                   <td>Gender</td>
                     <td>
-                        <!-- v-model fait du double data-binding -->
+                        <!-- v-model for two-way data-binding (use sync for the same feature with components) -->
                         <input type="radio" name="gender"
                                value="Male" v-model="bean.gender"/>Male
                         <input type="radio" name="gender"

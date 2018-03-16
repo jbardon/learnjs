@@ -13,7 +13,7 @@ const config = {
       {
         test: /\.vue$/,
         exclude: /node_modules/,
-        use: 'vue-loader',
+        use: 'vue-loader', // To use SPC
       },
       {
         test: /\.(js)$/,
@@ -51,6 +51,8 @@ const config = {
   },
   resolve: {
     alias: {
+      // Default export in npm package doesn't include template compiler
+      // https://vuejs.org/v2/guide/installation.html#Explanation-of-Different-Builds
       vue: 'vue/dist/vue.js',
     },
   },
