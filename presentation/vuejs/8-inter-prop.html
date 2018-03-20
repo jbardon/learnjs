@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+    <div id="vm">
+    </div>
+
+    <style>
+        .arrived {
+            background-color: green;
+        }
+        .run {
+            background-color: orange;
+        }
+    </style>
+
+    <script type="x-template" id="race">
+        <div>
+            <div style="height: 50px; width: 50px;" :class="{ arrived: areAllArrived, run: !areAllArrived }"></div>
+            <Runner v-for="(runner, index) in runners" :runner="runner" :key="index" :set-arrived="setRunnerArrived"></Runner>
+        </div>
+    </script>
+
+    <script type="x-template" id="runner">
+        <p v-if="!runner.arrived">
+            {{ runner.name }} est en train de courir. <input type="button" value="Arrivé!" @click="setArrived(runner.name)"/>
+        </p>
+        <p v-else>
+            {{ runner.name }} a terminé la course.
+        </p>
+    </script>
+
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+    <script>
+      Vue.component('Race', {
+        template: '#race',
+        data: function(){
+          return {
+            runners: []
+          }
+        },
+        beforeMount: function () {
+          this.runners.push({ name: 'Arthur', arrived: false });
+          this.runners.push({ name: 'Julien', arrived: false });
+        },
+        computed: {
+          areAllArrived: function () {
+            return this.runners.reduce(function (result, runner) {
+                return result && runner.arrived;
+            });
+          }
+        },
+        methods: {
+          setRunnerArrived: function (name) {
+            /*
+            var runner = this.runners.filter(function (runner) {
+              return runner.name === name;
+            });
+            runner.arrived = true;
+            */
+            var index = this.runners.findIndex(function (runner) {
+              return runner.name === name;
+            });
+            this.$set(this.runners[index], 'arrived', true);
+          }
+        }
+      });
+
+      Vue.component('Runner', {
+        template: '#runner',
+        props: [ 'runner', 'setArrived' ],
+        /*
+        methods: {
+          arrived: function () {
+            // Pas possible d'utiliser runner.arrived
+          }
+        }
+        */
+      });
+
+      var vm = new Vue({
+        el: '#vm',
+        template: '<Race></Race>'
+      });
+    </script>
+</body>
+</html>

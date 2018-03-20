@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+    <div id="vm">
+    </div>
+
+    <script type="x-template" id="app">
+        <div>
+            <h1>{{ title }}</h1>
+            <p>{{ message }}</p>
+        </div>
+    </script>
+
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+    <script>
+      var App = {
+        template: '#app',
+        props: [ 'title' ],
+        data: function(){
+          return {
+            message: 'World'
+          }
+        }
+      };
+
+      Vue.component('app', App);
+
+      var vm = new Vue({
+        el: '#vm',
+        template: '<app title="Hello"></app>'
+      });
+    </script>
+</body>
+</html>
