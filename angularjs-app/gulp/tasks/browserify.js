@@ -36,7 +36,7 @@ var makeBundle = function (isAppBundle) {
   var browserifyVendorFunction = (isAppBundle) ? bundleConfig.external.bind(bundleConfig) : bundleConfig.require.bind(bundleConfig);
 
   // Read package.json and get dependencies package ids
-  var packageManifest = require('package.json');
+  var packageManifest = require('../../package.json');
   var packageIds = Object.keys(packageManifest.dependencies) || [];
   packageIds.forEach(function (id) {
     browserifyVendorFunction(nodeResolve.sync(id), {expose: id});
