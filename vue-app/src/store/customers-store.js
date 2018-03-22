@@ -14,7 +14,7 @@ const mutations = {
     Vue.set(
       state,
       'list',
-      state.list.filter(customer => customer.id !== customerId),
+      state.list.filter(customer => customer.id !== customerId)
     );
   },
   clearCustomers(state) {
@@ -30,7 +30,7 @@ const actions = {
     return fetch('http://localhost:2092/customers')
       .then(
         response => response.json(),
-        error => console.error('An error occurred.', error),
+        error => console.error('An error occurred.', error)
       )
       .then(response => commit('customersLoaded', response));
   },

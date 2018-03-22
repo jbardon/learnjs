@@ -1,7 +1,7 @@
 <template>
  <div>
     <div v-if="!customer.item || Object.keys(customer.item).length === 0">Chargement en cours</div>
-    <div v-else class="panel panel-info">
+     <div v-else class="panel panel-info">
       <div class="panel-heading">
         <h3 class="panel-title">{{customer.item.firstname}} {{customer.item.lastname}}</h3>
       </div>

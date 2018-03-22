@@ -26,7 +26,7 @@ const actions = {
       fetch(`http://localhost:2092/customers/${customerId}`)
         .then(
           response => response.json(),
-          error => console.error('An error occurred.', error),
+          error => console.error('An error occurred.', error)
         )
         // Context.commit to trigger another action/mutation
         .then(response => context.commit('customerLoaded', response))
@@ -40,7 +40,7 @@ const actions = {
     })
       .then(
         response => response.json(),
-        error => console.error('An error occurred.', error),
+        error => console.error('An error occurred.', error)
       )
       .then(response => context.commit('customerSaved', response));
   },

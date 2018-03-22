@@ -40,8 +40,9 @@ const config = {
     }),
     new PrettierPlugin({
       singleQuote: true,
-      trailingComma: 'all',
+      trailingComma: 'es5', // ESLint does not like "function(a => a,)"
       jsxBracketSameLine: true,
+      extensions: [ '.js' ], // Vue file not supported
     }),
   ],
   devtool: 'eval-source-map',
