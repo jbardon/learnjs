@@ -1,4 +1,4 @@
-function CustomerSheetController ($scope, CustomerSheetService, initData) {
+function CustomerSheetController ($scope, $state, CustomerSheetService, initData) {
 		
 	var ctrl = this;
 	var svc = CustomerSheetService;
@@ -7,6 +7,7 @@ function CustomerSheetController ($scope, CustomerSheetService, initData) {
 		svc.save(ctrl.customer).then(function (data) {
 			ctrl.customer = data;
 			ctrl.modelChanged = false;
+			//$state.go('customers-list'); // Go to page with router
 		});
 	};
 

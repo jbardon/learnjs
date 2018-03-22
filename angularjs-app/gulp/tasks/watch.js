@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 
 /**
- * Surveille les changements pour mettre à jour le serveur local
+ * Watch changes to update local server
  */
 gulp.task('watch', function () {
 	gulp.watch('./src/scripts/**/*.js', ['browserify']);

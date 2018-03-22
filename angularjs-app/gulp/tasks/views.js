@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 
 /**
- * Copie tous les fichiers .html vers le serveur local
+ * Copy all .html files to the local server
  */
 gulp.task('views', function () {
 	return gulp.src('./src/views/**/*.html')

@@ -9,8 +9,8 @@ var source = require('vinyl-source-stream');
 var nodeResolve = require('resolve');
 
 /**
- * Regroupe tous les fichiers .js dans un seul fichier bundle.js
- * Permet d'utiliser le require de SystemJS
+ * Put together all .js in one single file
+ * Allows to use require from SystemJS
  */
 gulp.task('browserify', function (cb) {
 	runSequence('bundle-app', 'bundle-vendors', cb);
@@ -43,22 +43,22 @@ var makeBundle = function (isAppBundle) {
   });
 
   // Generate bundle
-  var bundleName = (isAppBundle ? 'bundle' : 'vendor') + '.js';
+  var bundleName = (isAppBundle ? 'bundle' : 'vendors') + '.js';
   return bundleConfig.bundle()
     .pipe(source(bundleName))
     .pipe(gulp.dest('./dist'));
 };
 
 gulp.task('bundle-app', function () {
-  makeBundle('app');
+  makeBundle(true);
 });
 
 gulp.task('bundle-vendors', function () {
-  makeBundle('vendors');
+  makeBundle(false);
 });
 
 /**
- * Pas compatible avec browserify
+ * Not compatible with browserify
 gulp.task('sourcemap', function () {
     return browserify('./src/scripts/index.js')
         .bundle()

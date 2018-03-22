@@ -49,9 +49,6 @@
     </profile>
     <version value="1.0" />
   </component>
-  <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{tsconfig$roots}" />
-  </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
@@ -61,6 +58,18 @@
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProjectCodeStyleConfiguration">
+    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+    <code_scheme name="Project" version="173">
+      <codeStyleSettings language="JavaScript">
+        <indentOptions>
+          <option name="INDENT_SIZE" value="2" />
+          <option name="CONTINUATION_INDENT_SIZE" value="2" />
+          <option name="TAB_SIZE" value="2" />
+        </indentOptions>
+      </codeStyleSettings>
+    </code_scheme>
   </component>
   <component name="ProjectCodeStyleSettingsManager">
     <option name="PER_PROJECT_SETTINGS">
@@ -101,13 +110,9 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Dev AngularJsApp" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/angularjs-app/gulpfile.js</gulpfile>
-      <tasks />
-      <arguments />
-      <envs />
+    <configuration default="false" name="Debug AngularJsApp" type="JavascriptDebugType" factoryName="JavaScript Debug" activateToolWindowBeforeRun="false" uri="http://localhost:2222">
+      <mapping url="http://localhost:2222" local-file="$PROJECT_DIR$/angularjs-app/src/scripts" />
+      <mapping url="http://localhost:2222" local-file="$PROJECT_DIR$/angularjs-app" />
       <method />
     </configuration>
     <configuration default="false" name="Debug VueApp" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:7070">
@@ -115,29 +120,33 @@
       <mapping url="webpack:///." local-file="$PROJECT_DIR$/vue-app/src" />
       <method />
     </configuration>
-    <configuration default="false" name="Debug AngularJsApp" type="JavascriptDebugType" factoryName="JavaScript Debug" activateToolWindowBeforeRun="false" uri="http://localhost:2222">
-      <mapping url="http://localhost:2222" local-file="$PROJECT_DIR$/angularjs-app/src/scripts" />
-      <mapping url="http://localhost:2222" local-file="$PROJECT_DIR$/angularjs-app" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Run MockApi" type="js.build_tools.npm" factoryName="npm">
-      <package-json value="$PROJECT_DIR$/mock-api/package.json" />
-      <command value="start" />
-      <node-interpreter value="project" />
+    <configuration default="false" name="Dev AngularJsApp" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>node</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/angularjs-app/gulpfile.js</gulpfile>
+      <tasks />
+      <arguments />
       <envs />
       <method />
     </configuration>
     <configuration default="false" name="Dev ReactApp" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/react-app/package.json" />
       <command value="start" />
-      <node-interpreter value="project" />
+      <node-interpreter value="node" />
       <envs />
       <method />
     </configuration>
     <configuration default="false" name="Dev VueApp" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/vue-app/package.json" />
       <command value="start" />
-      <node-interpreter value="project" />
+      <node-interpreter value="node" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Run MockApi" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/mock-api/package.json" />
+      <command value="start" />
+      <node-interpreter value="node" />
       <envs />
       <method />
     </configuration>

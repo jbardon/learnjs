@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var express = require('express');
 
 /**
- * Serveur http local qui sert la version buildée du projet
+ * Local HTTP server to serve build project version
  */
 gulp.task('server', function () {
 	var server = express();
