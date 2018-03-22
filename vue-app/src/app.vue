@@ -8,13 +8,9 @@
 
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
               <!-- Use router to navigate -->
-              <router-link to="/">Home</router-link>
-            </li>
-            <li>
-              <router-link to="/customers">Customers</router-link>
-            </li>
+              <router-link to="/" tag="li" exact-active-class="active"><a>Home</a></router-link>
+              <router-link to="/customers" tag="li" exact-active-class="active"><a>Customers</a></router-link>
           </ul>
         </div>
       </div>

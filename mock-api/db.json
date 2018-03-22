@@ -1,15 +1,14 @@
 {
-  "customers" : [
+  "customers": [
     {
       "id": 1,
       "firstname": "Nollie",
       "lastname": "Klicher",
       "gender": "Female",
-
       "address": {
         "street": "264 Colorado Pass",
-        "zipcode": "152219",
-        "city": "Toutosa"
+        "zipcode": "1522199",
+        "city": "Toutosar"
       },
       "contact": {
         "email": "nklicher0@princeton.edu",
@@ -21,9 +20,8 @@
       "firstname": "Eustace",
       "lastname": "Badrick",
       "gender": "Male",
-
       "address": {
-        "street": "588 Montana Avenue",
+        "street": "588 Montana Avenuesv",
         "zipcode": "28205",
         "city": "Soukkouma"
       },

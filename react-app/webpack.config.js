@@ -38,7 +38,7 @@ const config = {
   // Déploiement en local avec webpack-dev-server
   devServer: {
     contentBase: path.join(__dirname, 'public'),
-    port: 6969,
+    port: 2094,
 
     // Renvoie à la racine en cas de 404 (toutes les URLs gérées par React)
     historyApiFallback: true,

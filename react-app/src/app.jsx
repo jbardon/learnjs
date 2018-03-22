@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { NavLink, Route, Switch, withRouter } from 'react-router-dom';
 
 import CustomersListContainer from './containers/customers-list.jsx';
 import CustomerSheetContainer from './containers/customer-sheet.jsx';
 import CustomerSheetEditContainer from './containers/customer-sheet-edit.jsx';
 import Dashboard from './components/dashboard/dashboard.jsx';
 
-const App = () => (
+const App = props => (
   <div>
     <nav className="navbar navbar-inverse navbar-static-top">
       <div className="container-fluid">
@@ -17,11 +17,18 @@ const App = () => (
         </div>
         <div className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
-            <li className="active">
-              <Link to="/">Home</Link>
+            <li className={(props.location.pathname === '/' && 'active') || ''}>
+              <NavLink to="/" activeClassName="active">
+                Home
+              </NavLink>
             </li>
-            <li>
-              <Link to="/customers">Customers</Link>
+            <li
+              className={
+                (props.location.pathname === '/customers' && 'active') || ''
+              }>
+              <NavLink to="/customers" activeClassName="active">
+                Customers
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -46,4 +53,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default withRouter(App); // Because css want active class on <li> and not <a>

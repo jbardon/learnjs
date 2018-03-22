@@ -17,6 +17,7 @@ const CustomerSheetEdit = {
   methods: {
     save() {
       this.saveCustomer(this.bean).then(this.setBean);
+      //this.$router.push('/customers'); // Go to page with router
     },
     // Met à jour le bean en fonction de l'état
     setBean() {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { loadCustomer, saveCustomer } from '../actions/customer-sheet';
@@ -58,6 +59,7 @@ class CustomerSheetEditController extends Component {
 
   saveCustomerForm() {
     this.props.saveCustomer(this.state);
+    //this.props.history.push('/customers'); // Go to page with router
   }
 
   render() {
@@ -83,7 +85,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const CustomerSheetEditContainer = connect(mapStateToProps, mapDispatchToProps)(
-  CustomerSheetEditController,
+  withRouter(CustomerSheetEditController), // To access router in component
 );
 
 export default CustomerSheetEditContainer;

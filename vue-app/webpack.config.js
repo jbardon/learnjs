@@ -48,7 +48,7 @@ const config = {
   devtool: 'eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'public'),
-    port: 7070,
+    port: 2095,
   },
   resolve: {
     alias: {

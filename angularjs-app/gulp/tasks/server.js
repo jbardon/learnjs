@@ -9,7 +9,7 @@ var express = require('express');
 gulp.task('server', function () {
 	var server = express();
 	server.use(express.static('./dist'));
-	server.listen(2222);
+	server.listen(2093);
 
-	console.log('Server started on http://localhost:2222');
+	console.log('Server started on http://localhost:2093');
 });
