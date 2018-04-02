@@ -1,6 +1,6 @@
-#Vue-App
+# Vue-App
 
-Vue-App is a simple project build to discover and train yourself about VueJS.
+Vue-App is a simple project build to discover and train yourself about VueJS.  
 This webapp offers regular features such as displaying a list, managing a form and connect with an API.
 
 It includes :
@@ -12,22 +12,25 @@ It includes :
 |--------------|--------------|
 |![customers-list](../img/customers-list.png)|![customer-edit](../img/customer-edit.png)|
 
-##Run it
+## Run it
+
 **Requirement**: checkout `mock-api` project and run it.
+
 ```
 npm start
 ```
 
-##Technologies
-###Framework
+## Technologies
+
+### Framework
 * [Vue.js 2.x](https://vuejs.org/v2/guide/)
 * [Vue Router](https://router.vuejs.org/en/essentials/getting-started.html)
 * [VueX](https://vuex.vuejs.org/en/getting-started.html)
 * [Fetch API](https://www.npmjs.com/package/whatwg-fetch)
 
-###Build
+### Build
 * [Babel](https://babeljs.io/)
 * [Webpack](https://webpack.js.org/concepts/)
 * [ESLint](https://eslint.org/docs/user-guide/getting-started)
 
-##Some links about VueJS
+## Some links about VueJS
