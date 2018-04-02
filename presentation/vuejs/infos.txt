@@ -1,8 +1,0 @@
-https://vuejs.org/v2/guide/
-https://vuejsdevelopers.com/
-https://github.com/vuejs/awesome-vue
-https://cinwell.com/vuep/#/?id=demo
-https://github.com/vuejs/vue-cli
-
-Evan You
-Laravel, GitLab, Nintendo, Alibaba, Baidu, Tencent, Xiaomi
