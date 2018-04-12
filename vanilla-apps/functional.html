@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ramda</title>
+</head>
+<body>
+    <a href="https://gist.github.com/jbardon/2a9bee4ff05b984538cab77a2a9e4ed5">Gist</a>
+    <!--<script src="https://unpkg.com/ramda@0.25.0/dist/ramda.min.js"></script>-->
+    <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+
+    <script>const assert = chai.assert;</script>
+
+    <!-- Pure function -->
+    <script>
+      var globalValue = 1;
+
+      function addPure (a, b) {
+        return a + b.value;
+      }
+
+      function impureAdd (b) {
+        // Side effect
+        globalValue += 1;
+
+        // Input data must be immutable
+        b.value++;
+
+        // Output can change with same input
+        return b.value + globalValue;
+      }
+
+      const b = { value: 2 };
+      const callAddPure = () => addPure(1, b);
+      assert.doesNotChange(callAddPure, window, 'globalValue', 'add doesn\'t have side effects');
+      assert.doesNotChange(callAddPure, b, 'value', 'add doesn\'t update input values');
+
+      const resultAddFirst = addPure(1, b);
+      const resultAddSecond = addPure(1, b);
+      assert.strictEqual(resultAddFirst, resultAddSecond, 'add output does\'t change with same input');
+
+      /*
+      function isPureFunction(func) {
+        const beforeApply = window.CONSTANT;
+        return function () {
+            func.apply(arguments);
+            const afterApply = window.CONSTANT;
+            return beforeApply == afterApply;
+        }
+      }
+
+      const isAddPurePure = isPureFunction(addPure)(1,2);
+      chai.expect(isAddPurePure, 'addPure must be pure').to.be.true;
+
+      const isAddNotPurePure = isPureFunction(addNotPure)(2);
+      chai.expect(isAddNotPurePure, 'addNotPure must be not pure').to.be.false;
+      */
+    </script>
+
+    <!-- High-order function -->
+    <script>
+      function add (a, b) {
+        return a + b;
+      }
+
+      let resultAdd = add(1,2);
+      assert.strictEqual(resultAdd, 3, '1 + 2 = 3');
+
+      // Takes a function as an argument
+      function apply (func, a, b) {
+        return func(a, b);
+      }
+
+      const resultApply = apply(add, 1, 2);
+      assert.strictEqual(resultApply, resultAdd, 'apply must return the same result as add');
+
+      // Returns a function (add middleware)
+      function safe (func) {
+        return function () {
+          if (arguments.length != 2) return false;
+          return func.apply(null, Array.from(arguments));
+        }
+      }
+
+      const safeAdd = safe(add);
+      assert.isFunction(safeAdd, 'safeAdd is an HOC');
+
+      const resultSafeAddTwoArgs = safeAdd(1, 2);
+      assert.strictEqual(resultSafeAddTwoArgs, resultAdd, 'safeAdd must return the same result as add');
+
+      const resultSafeAddOneArg = safeAdd(1);
+      assert.isFalse(resultSafeAddOneArg, 'safeAdd must return false if it doesn\'t get two arguments');
+
+      /*
+      function isHighOrderFunction (func) {
+        const funcResult = func.call(null, function(){});
+        return typeof(funcResult) === 'function';
+      }
+
+      const isAddHOC = isHighOrderFunction(add);
+      chai.expect(isAddHOC, 'add isn\'t an HOC').to.be.false;
+
+      const isApplyHOC = isHighOrderFunction(apply);
+      chai.expect(isApplyHOC, 'apply isn\'t an HOC').to.be.false;
+
+      const isSafeHOC = isHighOrderFunction(safe);
+      chai.expect(isSafeHOC, 'safe is an HOC').to.be.true;
+      */
+    </script>
+
+    <!-- Predicat -->
+    <script>
+      // Returns only a boolean value
+      const isPositive = a => a > 0;
+
+      const resultIsPositive = isPositive(5);
+      assert.isBoolean(resultIsPositive, 'isPositive must return a boolean');
+
+      const resultIsPositiveFilter = [3, -6, 4].filter(isPositive);
+      assert.lengthOf(resultIsPositiveFilter, 2, 'filter with isPositive must return only positive values');
+
+      /*
+      function isPredicatFunction(func) {
+        const result = func.call(null);
+        return typeof(result) === "boolean";
+      }
+
+      const isIsPositivePredicate = isPredicatFunction(isPositive);
+      chai.expect(isIsPositivePredicate, 'isPositive must be a predicate').to.be.true;
+
+
+      function notPredicate (a) {
+        return a;
+      }
+      const isNotPredicatePredicate = isPredicatFunction(notPredicate);
+      chai.expect(isNotPredicatePredicate, 'notPredicate musn\'t be a predicate').to.be.false;
+      */
+    </script>
+
+    <!-- Currification -->
+    <script>
+      add = function (a, b) {
+        return a + b;
+      };
+
+      resultAdd = add(1,2);
+      assert.strictEqual(resultAdd, 3, '1 + 2 = 3');
+
+      // Changed the usage of add
+      // from add(1, 2) to add(1)(2)
+      function currifiedAdd (a) {
+        return function (b) {
+          return a + b;
+        }
+      }
+
+      const resultCurrified = currifiedAdd(1)(2);
+      assert.strictEqual(resultCurrified, resultAdd, 'currifiedAdd returns the same value as add');
+
+      const hardCurrifiedAdd = a => b => a + b; // Harder to read
+      const resultHardCurrified = hardCurrifiedAdd(1)(2);
+      assert.strictEqual(resultHardCurrified, resultAdd, 'hardCurrifiedAdd returns the same value as add');
+
+      /*
+      function isCurrifiedFunction (func) {
+        const funcFirstResult = func.call(null);
+        const isFirstResultAFunction = typeof funcFirstResult === 'function';
+
+        const funcSecondResult = isFirstResultAFunction && funcFirstResult.call(null);
+        const isSecondResultAFunction = typeof funcSecondResult === 'function';
+        return isFirstResultAFunction && !isSecondResultAFunction;
+      }
+
+      const isCurrifiedAdd = isCurrifiedFunction(add);
+      chai.expect(isCurrifiedAdd, 'add is not currified').to.be.false;
+
+      const isCurrifiedAddCurrified = isCurrifiedFunction(addCurrified);
+      chai.expect(isCurrifiedAddCurrified, 'addCurrified is currified').to.be.true;
+
+      const isCurrifiedAddCurrifiedHard = isCurrifiedFunction(addCurrifiedHard);
+      chai.expect(isCurrifiedAddCurrifiedHard, 'addCurrifiedHard is currified').to.be.true;
+      */
+    </script>
+
+    <!-- Partial application -->
+    <script>
+      add = a => b => a + b;
+
+      resultAdd = add(2)(1);
+      assert.strictEqual(resultAdd, 3, '2 + 1 = 3');
+
+      // add2 is a partial application of add
+      const add2 = add(2);
+      const resultAdd2 = add2(1);
+
+      assert.isFunction(add2, 'add partial application must be a function');
+      assert.strictEqual(resultAdd2, resultAdd, 'add2 returns the same value as add');
+    </script>
+
+    <!-- Reduce -->
+    <script>
+
+        /* Compose
+        *  g is applied first
+        *  f(g(x)) => compose(f, g)(x)
+        * */
+
+        const compose = function () {
+          const functions = Array.from(arguments);
+          return function (startValue) {
+            return functions.reduceRight(function (lastValue, currentFunc) {
+                return currentFunc(lastValue)
+            }, startValue);
+          }
+        };
+
+        // OR
+        const composeHard = (...functions) => startValue =>
+          functions.reduceRight((lastValue, currentFunction) => currentFunction(lastValue), startValue);
+
+        let add1 = x => x + 1;
+        const resultAdd1 = add1(5);
+        assert.strictEqual(resultAdd1, 6, 'add1 works: 5 + 1 = 6');
+
+        let multiply2 = x => x * 2;
+        const resultMultiply2 = multiply2(3);
+        assert.strictEqual(resultMultiply2, 6, 'resultMultiply2 works: 3 * 2 = 6');
+        
+        let resultAdd1Multiply2 = multiply2(add1(3));
+        assert.strictEqual(resultAdd1Multiply2, 8, 'add1Multiply2 must works: (3 + 1) * 2 = 8');
+
+        const composedAdd1Multiply2 = compose(multiply2, add1);
+        const resultComposeAdd1Multiply2 = composedAdd1Multiply2(3);
+
+        assert.isFunction(composedAdd1Multiply2, 'compose must return a function');
+        assert.strictEqual(resultComposeAdd1Multiply2, resultAdd1Multiply2, 'composedAdd1Multiply2 must returns the same value than add1Multiply2');
+
+        /* Pipe
+        *  f is applied first
+        *  f(x) | g => pipe(f, g)(x)
+        * */
+        const pipe = function () {
+          const functions = Array.from(arguments);
+          return function (startValue) {
+            return functions.reduce(function (lastValue, currentFunc) {
+              return currentFunc(lastValue)
+            }, startValue);
+          }
+        };
+
+        // OR
+        const pipeHard = (...functions) => startValue =>
+          functions.reduce((lastValue, currentFunction) => currentFunction(lastValue), startValue);
+
+        const pipedAdd1Multiply2 = pipe(add1, multiply2);
+        const resultPipeAdd1Multiply2 = pipedAdd1Multiply2(3);
+
+        assert.isFunction(pipedAdd1Multiply2, 'pipe must return a function');
+        assert.strictEqual(resultPipeAdd1Multiply2, resultAdd1Multiply2, 'pipedAdd1Multiply2 must returns the same value than add1Multiply2');
+    </script>
+
+    <!-- Redux -->
+    <script>
+      const addReducer = (state = 0, action = {}) => {
+        const { type, payload } = action;
+        switch (type) {
+          case 'ADD_VALUE':
+            return state + payload;
+          default: return state;
+        }
+      };
+
+      const actions = [
+        { type: 'ADD_VALUE', payload: 1 },
+        { type: 'ADD_VALUE', payload: 1 },
+        { type: 'ADD_VALUE', payload: 1 },
+      ];
+
+      const resultAddReducer = actions.reduce(addReducer, 0);
+      assert.strictEqual(resultAddReducer, 3, 'addReducer must execute all actions and return the state');
+    </script>
+
+    <!-- Functors axisting in ES6 -->
+    <script>
+      const functor = [1, 2, 3];
+      assert.sameOrderedMembers(functor.valueOf(), [1, 2, 3], 'functor stores a value');
+      assert.exists(functor.map, 'functor got a map function');
+
+      const resultIdentity = functor.map(x => x);
+      assert.sameOrderedMembers(resultIdentity, [1, 2, 3], 'functor respects identity law');
+
+      add1 = x => x + 1;
+      multiply2 = x => x * 2;
+
+      resultAdd1Multiply2 = [4, 6, 8];
+
+      const resultTransitivity1 = functor.map(x => multiply2(add1(x)));
+      assert.sameOrderedMembers(resultTransitivity1, resultAdd1Multiply2, 'Transitivity1 returns the expected result');
+
+      const resultTransitivity2 = functor.map(x => add1(x)).map(x => multiply2(x));
+      assert.sameOrderedMembers(resultTransitivity2, resultTransitivity1, 'functor respects transitivity law');
+
+      const endoFunctor = functor.map(x => x + 1);
+      assert.isArray(functor, 'functor stores an array value');
+      assert.isArray(endoFunctor, 'functor returns a functor containing an array value, it\'s an endofunctor');
+    </script>
+
+    <!-- Homemade functor -->
+    <script>
+      const StringFunctor = value => ({
+        functor: 'StringFunctor',
+        map: fn => StringFunctor(fn(value)), // map to be a functor
+        valueOf: () => value,
+      });
+
+      const stringFunctor = StringFunctor('Hello');
+      assert.strictEqual(stringFunctor.valueOf(), 'Hello', 'stringFunctor stores a string');
+      assert.exists(stringFunctor.map, 'stringFunctor got a map function');
+
+      const resultStringFunctor = stringFunctor.map(() => 1);
+      assert.strictEqual(stringFunctor.valueOf(), 'Hello', 'stringFunctor didn\'t mutate');
+      assert.strictEqual(resultStringFunctor.valueOf(), 1, 'resultStringFunctor got its value');
+      assert.propertyVal(resultStringFunctor, 'functor', 'StringFunctor', 'resultStringFunctor is a StringFunctor so it\'s an endoFunctor');
+    </script>
+
+    <!-- Functional Mixins -->
+    <script>
+        // Functional mixin defining adding a value in the initial object
+        const withValue = initValue => initialObject => {
+            return Object.assign({}, initialObject, {
+              value: initValue
+            });
+        };
+
+        const resultWithValue = withValue(5)({});
+        assert.isObject(resultWithValue, 'withValue is a functional mixin');
+
+        const withAddOne = initialObject => {
+            return Object.assign({}, initialObject, {
+                addOne() {
+                  this.value++;
+                  return this; // Always return this instead of initialObject because initialObject can change with other mixins
+                }
+            });
+        };
+
+        const resultWithAddOne = withAddOne({});
+        assert.isObject(resultWithAddOne, 'withAddOne is a functional mixin');
+
+        // This is a factory to create object with mixins eas
+        const createCounter = value => pipe (
+            withValue(value),
+            withAddOne // Dependency with withValue
+        )({});
+
+        const counter = createCounter(5);
+        assert.isObject(counter, 'counter is an object');
+        assert.hasAllKeys(counter, ['value', 'addOne'], 'counter has withValue and withAddOne mixins');
+
+        assert.propertyVal(counter, 'value', 5, 'counter is withValue mixin');
+        assert.property(counter, 'addOne', 'counter has withAddOne mixin function');
+        assert.isFunction(counter.addOne, 'counter is withAddOne mixin');
+
+        counter.addOne();
+        assert.propertyVal(counter, 'value', 6, 'withAddOne mixin works on counter');
+    </script>
+</body>
+</html>

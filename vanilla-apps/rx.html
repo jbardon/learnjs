@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rx</title>
+</head>
+<body>
+    <a href="https://gist.github.com/jbardon/5b02ba7b23b08e00827ddb07db33d401">Gist</a>
+    <script src="https://unpkg.com/rx@4.1.0/dist/rx.all.min.js"></script>
+    <script>
+      var source = Rx.Observable.interval(400).take(9)
+        .map (i => ['1', '1', 'foo', '2']);
+
+      var result = source
+        .map (x => parseInt(x))
+        .filter (x => !isNaN(x))
+        .reduce ((x, y) => x + y);
+
+      result.subscribe(x => console.log(x));
+    </script>
+</body>
+</html>
