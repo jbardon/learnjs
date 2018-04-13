@@ -1,0 +1,30 @@
+* [Le Codelab du devfest](https://github.com/GregoryBevan/devfest-vuejs)
+* [Guide site officiel](https://vuejs.org/v2/guide/)
+* [Blog interessant](https://vuejsdevelopers.com/)
+* [Awesome list](https://github.com/vuejs/awesome-vue)
+* [SFC live demo](https://cinwell.com/vuep/#/?id=demo)
+* [Vue-cli](https://github.com/vuejs/vue-cli)
+* [Slides](http://slides.com/johnpapa/introvue#/32)
+
+Evan You
+Laravel (framework par défaut), GitLab (front vue, back rails), Nintendo, Alibaba, Baidu, Tencent, Xiaomi
+
+* [VueConf US](https://medium.com/vue-mastery/the-future-of-vue-js-in-5-minutes-df9953142427)
+* [Cookbook](https://vuejs.org/v2/cookbook/)
+* [vue-test-utils](https://vue-test-utils.vuejs.org/en/)
+* [Vue 2.5](https://gist.github.com/yyx990803/9bdff05e5468a60ced06c29c39114c6b)
+
+Step 1 -> Init vue-cli
+Step 2 -> Home
+Step 3 -> Favoris (routing)
+Step 4 -> Navbar (components)
+
+Step 5 -> Serie (data, bind)
+Step 6 -> Appel service (.show)
+Step 7 -> Séries dynamiques (bind, props, v-for, template, v-html, image.medium)
+
+Step 8 -> Page des favoris (this.$emit, @clicked) le reste est fait
+Step 9 -> Pages des série (class binding, computed property)
+Step 10 -> Rechercher une série
+
+[Interface en ligne](https://codesandbox.io/s/vue)

@@ -38,23 +38,6 @@
       const resultAddFirst = addPure(1, b);
       const resultAddSecond = addPure(1, b);
       assert.strictEqual(resultAddFirst, resultAddSecond, 'add output does\'t change with same input');
-
-      /*
-      function isPureFunction(func) {
-        const beforeApply = window.CONSTANT;
-        return function () {
-            func.apply(arguments);
-            const afterApply = window.CONSTANT;
-            return beforeApply == afterApply;
-        }
-      }
-
-      const isAddPurePure = isPureFunction(addPure)(1,2);
-      chai.expect(isAddPurePure, 'addPure must be pure').to.be.true;
-
-      const isAddNotPurePure = isPureFunction(addNotPure)(2);
-      chai.expect(isAddNotPurePure, 'addNotPure must be not pure').to.be.false;
-      */
     </script>
 
     <!-- High-order function -->
@@ -90,22 +73,6 @@
 
       const resultSafeAddOneArg = safeAdd(1);
       assert.isFalse(resultSafeAddOneArg, 'safeAdd must return false if it doesn\'t get two arguments');
-
-      /*
-      function isHighOrderFunction (func) {
-        const funcResult = func.call(null, function(){});
-        return typeof(funcResult) === 'function';
-      }
-
-      const isAddHOC = isHighOrderFunction(add);
-      chai.expect(isAddHOC, 'add isn\'t an HOC').to.be.false;
-
-      const isApplyHOC = isHighOrderFunction(apply);
-      chai.expect(isApplyHOC, 'apply isn\'t an HOC').to.be.false;
-
-      const isSafeHOC = isHighOrderFunction(safe);
-      chai.expect(isSafeHOC, 'safe is an HOC').to.be.true;
-      */
     </script>
 
     <!-- Predicat -->
@@ -118,23 +85,6 @@
 
       const resultIsPositiveFilter = [3, -6, 4].filter(isPositive);
       assert.lengthOf(resultIsPositiveFilter, 2, 'filter with isPositive must return only positive values');
-
-      /*
-      function isPredicatFunction(func) {
-        const result = func.call(null);
-        return typeof(result) === "boolean";
-      }
-
-      const isIsPositivePredicate = isPredicatFunction(isPositive);
-      chai.expect(isIsPositivePredicate, 'isPositive must be a predicate').to.be.true;
-
-
-      function notPredicate (a) {
-        return a;
-      }
-      const isNotPredicatePredicate = isPredicatFunction(notPredicate);
-      chai.expect(isNotPredicatePredicate, 'notPredicate musn\'t be a predicate').to.be.false;
-      */
     </script>
 
     <!-- Currification -->
@@ -160,26 +110,6 @@
       const hardCurrifiedAdd = a => b => a + b; // Harder to read
       const resultHardCurrified = hardCurrifiedAdd(1)(2);
       assert.strictEqual(resultHardCurrified, resultAdd, 'hardCurrifiedAdd returns the same value as add');
-
-      /*
-      function isCurrifiedFunction (func) {
-        const funcFirstResult = func.call(null);
-        const isFirstResultAFunction = typeof funcFirstResult === 'function';
-
-        const funcSecondResult = isFirstResultAFunction && funcFirstResult.call(null);
-        const isSecondResultAFunction = typeof funcSecondResult === 'function';
-        return isFirstResultAFunction && !isSecondResultAFunction;
-      }
-
-      const isCurrifiedAdd = isCurrifiedFunction(add);
-      chai.expect(isCurrifiedAdd, 'add is not currified').to.be.false;
-
-      const isCurrifiedAddCurrified = isCurrifiedFunction(addCurrified);
-      chai.expect(isCurrifiedAddCurrified, 'addCurrified is currified').to.be.true;
-
-      const isCurrifiedAddCurrifiedHard = isCurrifiedFunction(addCurrifiedHard);
-      chai.expect(isCurrifiedAddCurrifiedHard, 'addCurrifiedHard is currified').to.be.true;
-      */
     </script>
 
     <!-- Partial application -->
@@ -326,34 +256,32 @@
     <!-- Functional Mixins -->
     <script>
         // Functional mixin defining adding a value in the initial object
-        const withValue = initValue => initialObject => {
-            return Object.assign({}, initialObject, {
+        const withValue = initValue => initialObject =>
+            Object.assign({}, initialObject, {
               value: initValue
             });
-        };
 
         const resultWithValue = withValue(5)({});
         assert.isObject(resultWithValue, 'withValue is a functional mixin');
 
-        const withAddOne = initialObject => {
-            return Object.assign({}, initialObject, {
+        const withAddOne = initialObject => // Can return object o => ({ value: 2}) and ({key, value}) => ({ [key]: value });
+            Object.assign({}, initialObject, {
                 addOne() {
-                  this.value++;
-                  return this; // Always return this instead of initialObject because initialObject can change with other mixins
+                    this.value++;
+                    return this; // Always return this instead of initialObject because initialObject can change with other mixins
                 }
             });
-        };
 
         const resultWithAddOne = withAddOne({});
         assert.isObject(resultWithAddOne, 'withAddOne is a functional mixin');
 
         // This is a factory to create object with mixins eas
-        const createCounter = value => pipe (
+        let createCounter = ({value = 5} = {}) => pipe ( // Destructuring + default value
             withValue(value),
             withAddOne // Dependency with withValue
         )({});
 
-        const counter = createCounter(5);
+        let counter = createCounter({value: 5});
         assert.isObject(counter, 'counter is an object');
         assert.hasAllKeys(counter, ['value', 'addOne'], 'counter has withValue and withAddOne mixins');
 
@@ -363,6 +291,25 @@
 
         counter.addOne();
         assert.propertyVal(counter, 'value', 6, 'withAddOne mixin works on counter');
+    </script>
+
+    <!-- Factory function -->
+    <script>
+      const withConstructor = constructor => o => {
+        const proto = Object.assign({},
+          Object.getPrototypeOf(o),
+          { constructor }
+        );
+        return Object.assign(Object.create(proto), o);
+      };
+
+      createCounter = o =>
+        withConstructor(createCounter)(o);
+
+      counter = createCounter({value: 5});
+      assert.isObject(counter, 'counter is an object');
+      assert.propertyVal(counter, 'value', 5, 'createCounter didn\'t mutate the input object');
+      assert.propertyVal(counter, 'constructor', createCounter, 'counter has the right constructor'); // constructor accessible through prototype
     </script>
 </body>
 </html>
