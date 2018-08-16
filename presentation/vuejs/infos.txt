@@ -1,4 +1,5 @@
 * [Le Codelab du devfest](https://github.com/GregoryBevan/devfest-vuejs)
+* [Sandbox demo](https://codesandbox.io/s/48rop968m7)
 * [Guide site officiel](https://vuejs.org/v2/guide/)
 * [Blog interessant](https://vuejsdevelopers.com/)
 * [Awesome list](https://github.com/vuejs/awesome-vue)
@@ -28,3 +29,29 @@ Step 9 -> Pages des série (class binding, computed property)
 Step 10 -> Rechercher une série
 
 [Interface en ligne](https://codesandbox.io/s/vue)
+
+, {
+		request: {
+			path: mockURLs.MOCK_APPLIVO + 'common/argusvalue/bytype',
+			method: 'GET'
+		},
+		response: {
+			data: getArgusValues(),
+			status: 200
+		}
+	}
+
+	function getArgusValues() {
+		return {
+			content : [
+				{code : "CAP", label : "Cote Argus Personnalisée©"},
+				{code : "CAPL", label : "Cote Argus Personnalisée©"},
+				{code : "VAA", label : "Valeur Argus Annonces©"},
+				{code : "VAAL", label : "Valeur Argus Annonces©"},
+				{code : "VAT", label : "Valeur Argus Transactions©"},
+				{code : "VATL", label : "Valeur Argus Transactions©"}
+			]
+		};
+	}
+
+	Une voiture cote argus: http://melen/#!/tradein/demodev2_12982992
