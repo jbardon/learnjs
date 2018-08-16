@@ -39,7 +39,10 @@ const CustomerSheet = props => {
                 </tr>
                 <tr>
                   <td>Phone Number</td>
-                  <td>{props.customer.contact.phone}(Landline)</td>
+                  <td>
+                    {props.customer.contact.phone}
+                    (Landline)
+                  </td>
                 </tr>
               </tbody>
             </table>

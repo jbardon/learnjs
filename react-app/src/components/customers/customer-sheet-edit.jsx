@@ -40,14 +40,16 @@ const CustomerSheetEdit = props => {
                       value="Male"
                       onChange={props.formUpdateCustomer}
                       checked={props.customer.gender === 'Male'}
-                    />Male
+                    />
+                    Male
                     <input
                       type="radio"
                       name="gender"
                       value="Female"
                       onChange={props.formUpdateCustomer}
                       checked={props.customer.gender === 'Female'}
-                    />Female
+                    />
+                    Female
                   </td>
                 </tr>
                 <tr>

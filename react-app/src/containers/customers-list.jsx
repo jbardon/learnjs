@@ -45,7 +45,6 @@ class CustomersListController extends Component {
   }
 
   render() {
-    console.error('render', this.props);
     const props = {
       ...this.props, // Surtout pour injections de l'état redux
       customers: this.props.customers,

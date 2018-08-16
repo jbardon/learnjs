@@ -3,7 +3,6 @@ import { NavLink, Route, Switch, withRouter } from 'react-router-dom';
 
 import CustomersListContainer from './containers/customers-list.jsx';
 import CustomerSheetContainer from './containers/customer-sheet.jsx';
-import CustomerSheetEditContainer from './containers/customer-sheet-edit.jsx';
 import Dashboard from './components/dashboard/dashboard.jsx';
 
 const App = props => (
@@ -38,11 +37,9 @@ const App = props => (
     <Switch>
       <Route exact path="/" component={Dashboard} />
       <Route exact path="/customers" component={CustomersListContainer} />
-      <Route exact path="/customers/:id" component={CustomerSheetContainer} />
-      <Route
-        path="/customers/:id/edit"
-        component={CustomerSheetEditContainer}
-      />
+
+      {/* Also matches /customers/:id/edit because not exact */}
+      <Route path="/customers/:id" component={CustomerSheetContainer} />
     </Switch>
     {/*
     customers && (
