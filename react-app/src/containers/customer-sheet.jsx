@@ -23,8 +23,9 @@ const mapDispatchToProps = dispatch => ({
   loadCustomer: customerId => dispatch(loadCustomer(customerId)),
 });
 
-const CustomerSheetContainer = connect(mapStateToProps, mapDispatchToProps)(
-  CustomerSheetController,
-);
+const CustomerSheetContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CustomerSheetController);
 
 export default CustomerSheetContainer;

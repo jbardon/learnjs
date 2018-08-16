@@ -1,7 +1,5 @@
 import React from 'react';
 
-import CustomersListDisplay from './customers-list-display.jsx';
-
 const CustomersList = props => {
   const hasCustomers = props.customers.length >= 1;
 
@@ -34,10 +32,13 @@ const CustomersList = props => {
         {!hasCustomers ? (
           <div>Pas de clients</div>
         ) : (
-          <CustomersListDisplay
-            customers={props.customers}
-            deleteCustomer={props.deleteCustomer}
-          />
+          /*
+            <CustomersListDisplay
+                customers={props.customers}
+                deleteCustomer={props.deleteCustomer}
+            />
+          */
+          props.children // Avoid prop drilling
         )}
       </div>
     </div>

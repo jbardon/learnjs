@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>React prop drilling</title>
+</head>
+<body>
+
+	<!--
+		3 ways to avoid prop drilling : children, render prop and context (experimental)
+		Children and render prop works better when there are no loops
+	-->
+	<div id="app"></div>
+
+	<script src="https://unpkg.com/react@16.4.2/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@16.4.2/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<script type="text/babel">
+
+		// Declare global context to save a value
+		const UserContext = React.createContext('user');
+
+		class App extends React.Component {
+			constructor(props) {
+				super(props);
+				this.state = { user: 'John Doe'}; // Otherwise the context triggers render
+			}
+			renderUser() {
+				return <User user="John Doe"/>;
+			}
+			render() {
+				return (
+				<React.Fragment>
+					<UserSectionDrill user="John Doe"/>
+
+					<UserSectionChildren>
+						<User user="John Doe"/> {/* Define props.children to avoid drilling */}
+					</UserSectionChildren>
+
+					<UserSectionRenderProp renderUser={() => this.renderUser()}/> {/* Pass render function to child */}
+
+					<UserContext.Provider value={this.state.user}> {/* Fill provider with value */}
+						<UserSectionContext/>
+					</UserContext.Provider>
+				</React.Fragment>);
+			}
+		}
+
+		const UserSectionDrill = props =>
+			<User user={props.user}/>; // No need user prop but drill it
+
+		const UserSectionChildren = props =>
+			props.children;
+
+		const UserSectionRenderProp = props =>
+			props.renderUser();
+
+		const UserSectionContext = () => // No props to provide
+			<UserContext.Consumer>
+				{ value => <User user={value}/> /* Get the user from the context */ }
+			</UserContext.Consumer>;
+
+		const User = props =>
+			<p>Name: {props.user}</p>;
+
+		ReactDOM.render(
+			<App/>,
+			document.getElementById('app')
+		);
+	</script>
+</body>
+</html>

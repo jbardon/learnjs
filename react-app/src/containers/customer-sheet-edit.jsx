@@ -59,7 +59,7 @@ class CustomerSheetEditController extends Component {
 
   saveCustomerForm() {
     this.props.saveCustomer(this.state);
-    //this.props.history.push('/customers'); // Go to page with router
+    // this.props.history.push('/customers'); Go to page with router
   }
 
   render() {
@@ -84,7 +84,10 @@ const mapDispatchToProps = dispatch => ({
   saveCustomer: customer => dispatch(saveCustomer(customer)),
 });
 
-const CustomerSheetEditContainer = connect(mapStateToProps, mapDispatchToProps)(
+const CustomerSheetEditContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(
   withRouter(CustomerSheetEditController), // To access router in component
 );
 

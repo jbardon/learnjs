@@ -1,7 +1,5 @@
 import React from 'react';
 
-import CustomersListItem from './customers-list-item.jsx';
-
 // Equivalent de extends React.PureComponent et bind automatiquement componentShouldUpdate
 const CustomersListDisplay = props => (
   <table className="table table-hover table-condensed">
@@ -14,13 +12,17 @@ const CustomersListDisplay = props => (
       </tr>
     </thead>
     <tbody>
-      {props.customers.map(customer => (
-        <CustomersListItem
-          key={customer.id}
-          customer={customer}
-          deleteCustomer={props.deleteCustomer}
-        />
-      ))}
+      {/*
+        props.customers.map(customer => (
+            <CustomersListItem
+                key={customer.id}
+                customer={customer}
+                deleteCustomer={props.deleteCustomer} // Prop drilling: not need but pass it down
+            />
+        ))
+      */}
+      {// renderListItem avoid deleteCustomer prop drilling
+      props.customers.map(customer => props.renderListItem(customer))}
     </tbody>
   </table>
 );

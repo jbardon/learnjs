@@ -9,11 +9,31 @@ import {
 } from '../actions/customers-list';
 
 import CustomersList from '../components/customers/customers-list.jsx';
+import CustomersListDisplay from '../components/customers/customers-list-display.jsx';
+import CustomersListItem from '../components/customers/customers-list-item.jsx';
 
 class CustomersListController extends Component {
+  constructor(props) {
+    super(props);
+
+    // Methods bindings must be in constructor not in lifecycle methods
+    this.addItem = this.addItem.bind(this);
+    this.renderListItem = this.renderListItem.bind(this);
+  }
   componentDidMount() {
     this.props.loadCustomers();
-    this.addItem = this.addItem.bind(this);
+  }
+
+  // Render prop pattern : pass a function for rendering with needs this component props
+  // Avoid prop drilling deleteCustomer in CustomersList
+  renderListItem(customer) {
+    return (
+      <CustomersListItem
+        key={customer.id}
+        customer={customer}
+        deleteCustomer={this.props.deleteCustomer}
+      />
+    );
   }
 
   addItem() {
@@ -25,12 +45,20 @@ class CustomersListController extends Component {
   }
 
   render() {
+    console.error('render', this.props);
     const props = {
       ...this.props, // Surtout pour injections de l'état redux
       customers: this.props.customers,
       addItem: this.addItem,
     };
-    return <CustomersList {...props} />;
+    return (
+      <CustomersList {...props}>
+        <CustomersListDisplay // Use children to avoid prop drilling renderListItem
+          customers={props.customers}
+          renderListItem={this.renderListItem}
+        />
+      </CustomersList>
+    );
   }
 }
 
@@ -45,8 +73,9 @@ const mapDispatchToProps = dispatch => ({
   loadCustomers: customers => dispatch(loadCustomers(customers)),
 });
 
-const CustomersListContainer = connect(mapStateToProps, mapDispatchToProps)(
-  CustomersListController,
-);
+const CustomersListContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CustomersListController);
 
 export default CustomersListContainer;

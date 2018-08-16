@@ -32,6 +32,7 @@ const config = {
       singleQuote: true,
       trailingComma: 'all',
       jsxBracketSameLine: true,
+      parser: 'babylon'
     }),
   ],
 
