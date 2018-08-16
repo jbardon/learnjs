@@ -8,6 +8,8 @@ import {
   loadCustomers,
 } from '../actions/customers-list';
 
+import { getAllCustomers } from '../reducers/customers-list';
+
 import CustomersList from '../components/customers/customers-list.jsx';
 import CustomersListDisplay from '../components/customers/customers-list-display.jsx';
 import CustomersListItem from '../components/customers/customers-list-item.jsx';
@@ -62,7 +64,7 @@ class CustomersListController extends Component {
 }
 
 const mapStateToProps = state => ({
-  customers: state.customers, // Link to reducer partial state
+  customers: getAllCustomers(state.customers), // Link to reducer partial state
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,18 +1,25 @@
-const initialState = [];
+const initialState = {};
 
-const customers = (state = initialState, action) => {
+export const customers = (state = initialState, action) => {
   switch (action.type) {
     case 'CUSTOMERS_ADD':
-      return [...state, action.customer];
-    case 'CUSTOMERS_DELETE':
-      return state.filter(customer => customer.id !== action.customerId);
+      return { ...state, [action.customer.id]: action.customer };
+    case 'CUSTOMERS_DELETE': {
+      const { [action.customerId]: deleted, ...otherCustomers } = state;
+      return otherCustomers;
+    }
     case 'CUSTOMERS_CLEAR':
-      return [];
-    case 'CUSTOMERS_LOADED':
-      return action.customers;
+      return {};
+    case 'CUSTOMERS_LOADED': {
+      const allCustomers = {};
+      action.customers.forEach(customer => {
+        allCustomers[customer.id] = customer;
+      });
+      return allCustomers;
+    }
     default:
       return state;
   }
 };
 
-export default customers;
+export const getAllCustomers = state => Object.values(state);
