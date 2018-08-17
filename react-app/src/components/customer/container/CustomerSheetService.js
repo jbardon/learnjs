@@ -1,11 +1,7 @@
 import 'whatwg-fetch';
 
-import { customerLoaded, customerSaved } from '../reducers/customer-sheet';
+import { customerLoaded, customerSaved } from './CustomerSheetActions';
 
-// Selectors makes possible state format conversion to fit view requirements
-export const getCustomer = state => state;
-
-// Actions
 export const loadCustomer = customerId => dispatch =>
   fetch(`http://localhost:2092/customers/${customerId}`)
     .then(

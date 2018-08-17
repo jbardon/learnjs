@@ -3,14 +3,11 @@ import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-import {
-  getCustomer,
-  loadCustomer,
-  saveCustomer,
-} from '../store/customers/actions/customer-sheet';
+import { getCustomer } from './CustomerSheetSelectors';
+import { loadCustomer, saveCustomer } from './CustomerSheetService';
 
-import CustomerSheetEdit from '../components/customers/customer-sheet-edit.jsx';
-import CustomerSheet from '../components/customers/customer-sheet.jsx';
+import CustomerSheetEdit from '../view/customer-sheet-edit.jsx';
+import CustomerSheet from '../view/customer-sheet.jsx';
 
 class CustomerSheetEditController extends Component {
   constructor(props) {

@@ -1,8 +1,6 @@
 import 'whatwg-fetch';
 
-import { customersLoaded } from '../reducers/customers-list';
-
-export const getAllCustomers = state => Object.values(state);
+import { customersLoaded } from './CustomerListActions';
 
 export const loadCustomers = () => dispatch =>
   fetch('http://localhost:2092/customers')

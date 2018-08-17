@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
-import {
-  getAllCustomers,
-  loadCustomers,
-} from '../store/customers/actions/customers-list';
+import CustomersList from '../view/customers-list.jsx';
+import CustomersListDisplay from '../view/customers-list-display.jsx';
+import CustomersListItem from '../view/customers-list-item.jsx';
+
+import { loadCustomers } from './CustomerListService';
+import { getAllCustomers } from './CustomerListSelectors';
 import {
   addCustomer,
   clearCustomers,
   deleteCustomer,
-} from '../store/customers/reducers/customers-list';
-
-import CustomersList from '../components/customers/customers-list.jsx';
-import CustomersListDisplay from '../components/customers/customers-list-display.jsx';
-import CustomersListItem from '../components/customers/customers-list-item.jsx';
+} from './CustomerListActions';
 
 class CustomersListController extends Component {
   constructor(props) {

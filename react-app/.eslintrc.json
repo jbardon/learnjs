@@ -18,6 +18,7 @@
     },
     "rules": {
         "import/named": 2, // Vérifie les imports
+        "import/prefer-default-export": "off", // Dans les services on ne veux pas de defaut même s'il n'y a qu'un seul export
         "react/prop-types": 0,
         "no-console": ["error", {"allow": ["error"]}],
         "arrow-parens": [2, "as-needed", { "requireForBlockBody": false }] // Prettier retire les parenthèses pour (prop) => {}

@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink, Route, Switch, withRouter } from 'react-router-dom';
 
-import CustomersListContainer from './containers/customers-list.jsx';
-import CustomerSheetContainer from './containers/customer-sheet.jsx';
+import CustomersListContainer from './components/customers/container/CustomerListContainer.jsx';
+import CustomerSheetContainer from './components/customer/container/CustomerSheetContainer.jsx';
 import Dashboard from './components/dashboard/dashboard.jsx';
 
 const App = props => (
