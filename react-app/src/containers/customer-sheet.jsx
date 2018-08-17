@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import { loadCustomer, saveCustomer } from '../actions/customer-sheet';
+
+import {
+  getCustomer,
+  loadCustomer,
+  saveCustomer,
+} from '../store/customers/actions/customer-sheet';
 
 import CustomerSheetEdit from '../components/customers/customer-sheet-edit.jsx';
 import CustomerSheet from '../components/customers/customer-sheet.jsx';
@@ -82,7 +87,7 @@ class CustomerSheetEditController extends Component {
 }
 
 const mapStateToProps = state => ({
-  customer: state.customer, // Link to reducer partial state
+  customer: getCustomer(state.customer), // Link to reducer partial state
 });
 
 const mapDispatchToProps = dispatch => ({

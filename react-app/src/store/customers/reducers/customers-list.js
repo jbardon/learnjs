@@ -1,6 +1,6 @@
 const initialState = {};
 
-export const customers = (state = initialState, action) => {
+export const customersReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'CUSTOMERS_ADD':
       return { ...state, [action.customer.id]: action.customer };
@@ -22,4 +22,15 @@ export const customers = (state = initialState, action) => {
   }
 };
 
-export const getAllCustomers = state => Object.values(state);
+export const addCustomer = customer => ({ type: 'CUSTOMERS_ADD', customer });
+
+export const deleteCustomer = customerId => ({
+  type: 'CUSTOMERS_DELETE',
+  customerId,
+});
+
+export const clearCustomers = () => ({ type: 'CUSTOMERS_CLEAR' });
+export const customersLoaded = customers => ({
+  type: 'CUSTOMERS_LOADED',
+  customers,
+});

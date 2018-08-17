@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
+
+import {
+  getAllCustomers,
+  loadCustomers,
+} from '../store/customers/actions/customers-list';
 import {
   addCustomer,
-  deleteCustomer,
   clearCustomers,
-  loadCustomers,
-} from '../actions/customers-list';
-
-import { getAllCustomers } from '../reducers/customers-list';
+  deleteCustomer,
+} from '../store/customers/reducers/customers-list';
 
 import CustomersList from '../components/customers/customers-list.jsx';
 import CustomersListDisplay from '../components/customers/customers-list-display.jsx';
@@ -22,6 +24,7 @@ class CustomersListController extends Component {
     this.addItem = this.addItem.bind(this);
     this.renderListItem = this.renderListItem.bind(this);
   }
+
   componentDidMount() {
     this.props.loadCustomers();
   }
