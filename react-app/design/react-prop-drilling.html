@@ -17,54 +17,53 @@
 	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 	<script type="text/babel">
 
-		// Declare global context to save a value
-		const UserContext = React.createContext('user');
+		const UserFullNameContext = React.createContext('userFullName');
 
-		class App extends React.Component {
-			constructor(props) {
-				super(props);
-				this.state = { user: 'John Doe'}; // Otherwise the context triggers render
-			}
-			renderUser() {
-				return <User user="John Doe"/>;
-			}
-			render() {
-				return (
-				<React.Fragment>
-					<UserSectionDrill user="John Doe"/>
+		const Page = () =>
+			[
+				<UserDetailsChildren>
+					<CustomInput value="John Doe"/> {/* Define props.children */}
+				</UserDetailsChildren>,
 
-					<UserSectionChildren>
-						<User user="John Doe"/> {/* Define props.children to avoid drilling */}
-					</UserSectionChildren>
+				{/* Remember: passing arrow functions is a bad pratice, make it a method of Page class instead */},
+				<UserDetailsRenderProp renderFullName={() => <CustomInput value="John Doe"/>}/>,
 
-					<UserSectionRenderProp renderUser={() => this.renderUser()}/> {/* Pass render function to child */}
+				<UserFullNameContext.Provider value="John Doe"> {/* Fill provider with value */}
+					<UserDetailsContext/>
+				</UserFullNameContext.Provider>
+			];
 
-					<UserContext.Provider value={this.state.user}> {/* Fill provider with value */}
-						<UserSectionContext/>
-					</UserContext.Provider>
-				</React.Fragment>);
-			}
-		}
+		const UserDetailsChildren = props =>
+			<section>
+				<h1>User details (with children)</h1>
+				{props.children}
+			</section>;
 
-		const UserSectionDrill = props =>
-			<User user={props.user}/>; // No need user prop but drill it
+		const UserDetailsRenderProp = props =>
+			<section>
+				<h1>User details (with render prop)</h1>
+				{props.renderFullName()}
+			</section>;
 
-		const UserSectionChildren = props =>
-			props.children;
+		const UserDetailsContext = () => // No props to provide
+			<section>
+				<h1>User details (with context)</h1>
+				<UserFullNameContext.Consumer>
+					{ fullName => <CustomInput value={fullName}/> }
+				</UserFullNameContext.Consumer>;
+			</section>;
 
-		const UserSectionRenderProp = props =>
-			props.renderUser();
-
-		const UserSectionContext = () => // No props to provide
-			<UserContext.Consumer>
-				{ value => <User user={value}/> /* Get the user from the context */ }
-			</UserContext.Consumer>;
-
-		const User = props =>
-			<p>Name: {props.user}</p>;
+		const inputStyle = {
+			height: '30px',
+			width: '200px',
+			fontSize: '19px',
+			border: 'none',
+			borderBottom: '1px solid black'
+		};
+		const CustomInput = props => <input style={inputStyle} type="text" defaultValue={props.value}/>;
 
 		ReactDOM.render(
-			<App/>,
+			<Page/>,
 			document.getElementById('app')
 		);
 	</script>
