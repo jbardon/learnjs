@@ -1,25 +1,25 @@
 <nav class="navbar navbar-inverse navbar-static-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">AngularJS-App</a>
-		</div>
-
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li ui-sref-active="active">
-					<a ui-sref="home" >Home</a>
-				</li>
-				<li ui-sref-active="active">
-					<!-- Route name in router -->
-					<a ui-sref="customers-list">Customers</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AngularJS-App</a>
+    </div>
+    
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active">
+          <a ui-sref="home" >Home</a>
+        </li>
+        <li ui-sref-active="active">
+          <!-- Route name in router -->
+          <a ui-sref="customers-list">Customers</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
 <!--
-	ui-view bind content according to current URL with ui-router
-	https://ui-router.github.io/ng1/tutorial/helloworld
+  ui-view bind content according to current URL with ui-router
+  https://ui-router.github.io/ng1/tutorial/helloworld
 -->
 <ui-view></ui-view>

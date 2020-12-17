@@ -1,24 +1,27 @@
 <div class="panel panel-default panel-table">
-	<div class="panel-heading">
-		<div class="row">
-			<div class="col col-xs-6">
-				<h3 class="panel-title">Customers list</h3>
-			</div>
-			<div class="col col-xs-6 text-right">
-				<button ng-if="ctrl.customers.length > 0" ng-click="ctrl.clearCustomers()" type="button" class="btn btn-sm btn-danger">Clear</button>
-				<button type="button" ng-click="ctrl.createCustomer()" class="btn btn-sm btn-success">Create</button>
-			</div>
-		</div>
-	</div>
-	<div class="panel-body">
-		<div ng-if="ctrl.customers.length <= 0">Pas de clients</div>
-
-		<!--
-			Use directive with tag name in kebab case ("restrict:'E'" in directive definition)
-			No autoclosing tags for custom tags
-		-->
-		<customers-list-display
-			ng-if="ctrl.customers.length > 0"
-			ng-model="ctrl.customers"></customers-list-display>
-	</div>
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col col-xs-6">
+        <h3 class="panel-title">Customers list</h3>
+        <h5>(selected id: {{ ctrl.selectedCustomerId }})</h5>
+      </div>
+      <div class="col col-xs-6 text-right">
+        <button ng-if="ctrl.customers.length > 0" ng-click="ctrl.clearCustomers()" type="button" class="btn btn-sm btn-danger">Clear</button>
+        <button type="button" ng-click="ctrl.createCustomer()" class="btn btn-sm btn-success">Create</button>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div ng-if="ctrl.customers.length <= 0">Pas de clients</div>
+    
+    <!--
+      * Use directive with tag name in kebab case ("restrict:'E'" in directive definition)
+      * No autoclosing tags for custom tags
+      * Bind event and get customer variables exposed from directive
+    -->
+    <customers-list-display
+      ng-if="ctrl.customers.length > 0"
+      ng-model="ctrl.customers"
+      customer-selected="ctrl.selectCustomer(customer.id)"></customers-list-display>
+  </div>
 </div>

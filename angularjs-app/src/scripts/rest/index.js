@@ -1,4 +1,4 @@
 angular
-	.module('rest', ['ngResource'])
-	.factory('CustomersRest', require('./CustomersRest'))
+  .module('rest', ['ngResource'])
+  .factory('CustomersRest', require('./CustomersRest'))
 ;

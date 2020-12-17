@@ -1,35 +1,36 @@
 <!-- A single root element required for directives -->
 <table class="table table-hover table-condensed">
-	<thead>
-	<tr>
-		<th>#</th>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th></th>
-	</tr>
-	</thead>
-	<tbody>
-		<!--
-			DOM parser doesn't allow anything else rather thant TR in TBODY in TD in TR
-			It is recommanded to alsways have a dot un variables for directives templates: obj.customers
-		-->
-		<tr ng-repeat="(index, customer) in customers">
-
-			<th scope="row">{{customer.id}}</th>
-			<td>{{customer.firstname}}</td>
-			<td>{{customer.lastname}}</td>
-			<td align="center">
-				<!-- To use the router [routeName]([params as objects properties])) -->
-				<a ui-sref="customer-sheet({id: customer.id})" class="btn btn-default">
-					<i class="fa fa-eye"></i>
-				</a>
-				<a ui-sref="customer-sheet-edit({id: customer.id})" class="btn btn-default">
-					<i class="fa fa-pencil"></i>
-				</a>
-				<a class="btn btn-default" ng-click="deleteCustomer(index)">
-					<i class="fa fa-trash"></i>
-				</a>
-			</td>
-		</tr>
-	</tbody>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- DOM parser doesn't allow anything else rather thant TR in TBODY in TD in TR -->
+    <tr ng-repeat="(index, customer) in customers" ng-click="customerClicked(customer)">
+      
+      <!--
+        It is recommanded to always have a dot in variables for directives templates: obj.customers
+        Primitives are shadowed by directive such as ng-if, there is a scope lookup for object
+      -->
+      <th scope="row">{{customer.id}}</th>
+      <td>{{customer.firstname}}</td>
+      <td>{{customer.lastname}}</td>
+      <td align="center">
+        <!-- To use the router [routeName]([params as objects properties])) -->
+        <a ui-sref="customer-sheet({id: customer.id})" class="btn btn-default">
+          <i class="fa fa-eye"></i>
+        </a>
+        <a ui-sref="customer-sheet-edit({id: customer.id})" class="btn btn-default">
+          <i class="fa fa-pencil"></i>
+        </a>
+        <a class="btn btn-default" ng-click="deleteCustomer(index)">
+          <i class="fa fa-trash"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
 </table>

@@ -1,38 +1,38 @@
 <div ng-if="ctrl.customer === undefined">Chargement en cours</div>
 <div ng-if="ctrl.customer !== undefined" class="panel panel-info">
-    <div class="panel-heading">
+  <div class="panel-heading">
     <h3 class="panel-title">{{ctrl.customer.firstname}} {{ctrl.customer.lastname}}</h3>
-    </div>
-    <div class="panel-body">
+  </div>
+  <div class="panel-body">
     <div class="row">
-        <div class="col-md-3 col-lg-3" align="center">
+      <div class="col-md-3 col-lg-3" align="center">
         <img alt="User Pic" class="img-circle img-responsive"/>
-        </div>
-        <div class="col-md-9 col-lg-9">
+      </div>
+      <div class="col-md-9 col-lg-9">
         <table class="table table-user-information">
-        <tbody>
+          <tbody>
             <tr>
-                <td>Gender</td>
-                <td>{{ctrl.customer.gender}}</td>
+              <td>Gender</td>
+              <td>{{ctrl.customer.gender}}</td>
             </tr>
             <tr>
-                <td>Home Address</td>
-                <td>
+              <td>Home Address</td>
+              <td>
                 <p>{{ctrl.customer.address.street}}</p>
                 <p>{{ctrl.customer.address.zipcode}} {{ctrl.customer.address.city}}</p>
-                </td>
+              </td>
             </tr>
             <tr>
-                <td>Email</td>
-                <td>{{ctrl.customer.contact.email}}</td>
+              <td>Email</td>
+              <td>{{ctrl.customer.contact.email}}</td>
             </tr>
             <tr>
-                <td>Phone Number</td>
-                <td>{{ctrl.customer.contact.phone}}(Landline)</td>
+              <td>Phone Number</td>
+              <td>{{ctrl.customer.contact.phone}}(Landline)</td>
             </tr>
-        </tbody>
+          </tbody>
         </table>
-        </div>
+      </div>
     </div>
-    </div>
+  </div>
 </div>

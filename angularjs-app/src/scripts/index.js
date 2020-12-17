@@ -7,12 +7,12 @@ require('./customer');
 require('./rest');
 
 var libraries = [
-	'ui.router'
+  'ui.router'
 ];
 
 var modules = [
-	'customer',
-	'rest'
+  'customer',
+  'rest'
 ];
 
 var app = angular.module('App', libraries.concat(modules));
