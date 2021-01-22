@@ -1,0 +1,10 @@
+{
+  "name": "learn-js",
+  "scripts": {
+    "start:api": "cd mock-api && npm run start",
+    "start:react": "cd react-app && npm run start"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6"
+  }
+}

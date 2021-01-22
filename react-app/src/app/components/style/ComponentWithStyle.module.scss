@@ -1,0 +1,26 @@
+.ComponentWithStyle {
+  color: red;
+}
+
+// Pseudo elements are working
+// https://medium.com/@pioul/modular-css-with-react-61638ae9ea3e#.re1pdcz87
+.ComponentWithStyle:before {
+  content: 'before';
+  height: 50px;
+  width: 50px;
+  background-color: gray;
+  color: white
+}
+
+.Button {
+  height: 50px;
+  width: 50px;
+
+  &--active {
+    background-color: green;
+  }
+
+  &--inactive {
+    background-color: red;
+  }
+}
