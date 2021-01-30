@@ -5,12 +5,9 @@ Reference API: https://reactjs.org/docs/react-api.html#overview
 * [Concurrent Mode](https://reactjs.org/docs/concurrent-mode-intro.html)
 * Hooks: useCallback, useMemo
 * [Profiling](https://reactjs.org/docs/profiler.html)
-* [React.Lazy](https://reactjs.org/docs/react-api.html#reactlazy) wih router also: https://reactjs.org/docs/code-splitting.html#reactlazy
-* [React Suspense](https://reactjs.org/docs/react-api.html#reactsuspense)
 * [Render props](https://reactjs.org/docs/render-props.html)
-* [Error boundaries](https://reactjs.org/docs/error-boundaries.html): not catch error leave empty UI??
+* > [Error boundaries](https://reactjs.org/docs/error-boundaries.html): not catch error leave empty UI??
 * Make `ng-content` and `@ContentChildren` with `props.children`
-* Make `@ViewChildren` with `ref.querySelector` 
 * Make `TemplateRef`, structural directives and `ngComponentOutlet`/`ngTemplateOutlet` with function render props (local function with props or component)
 
 ## Refs

@@ -4,6 +4,7 @@ import ComponentWithContext from './components/contexts/ComponentWithContext';
 import ComponentWithPortal from './components/portals/ComponentWithPortal';
 
 import ComponentWithRef from './components/refs/ComponentWithRef';
+import ComponentWithRouting from './components/routing/ComponentWithRouting';
 import ComponentWithStyle from './components/style/ComponentWithStyle';
 
 const App = () =>
@@ -11,8 +12,9 @@ const App = () =>
   <>
     {/* <ComponentWithRef>Hello</ComponentWithRef>
     <ComponentWithStyle></ComponentWithStyle>
-    <ComponentWithPortal></ComponentWithPortal> */}
-    <ComponentWithContext></ComponentWithContext>
+    <ComponentWithPortal></ComponentWithPortal>
+    <ComponentWithContext></ComponentWithContext> */}
+    <ComponentWithRouting></ComponentWithRouting>
   </>;
 
 export default App;
